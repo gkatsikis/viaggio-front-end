@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import AddPost from './pages/AddPost/AddPost'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -27,6 +28,7 @@ const App = () => {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/addPost" element={<AddPost />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
