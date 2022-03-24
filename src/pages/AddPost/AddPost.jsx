@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 
 
 const AddPost = (props) => {
@@ -13,14 +14,24 @@ const AddPost = (props) => {
   
   const [validForm, setValidForm] = useState(false)
 
-<<<<<<< HEAD
+  const formElement = useRef()
+  
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.handleAddPost(formData)
+  }
 
-=======
->>>>>>> 567089ee6f92cb16b8dc228452af94290f1b9100
+  useEffect(() => {
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [formData])
+
   return (
     <>
     <h1>Add Post</h1>
-    <form action="">
+    <form autoComplete="off"
+    ref={formElement}
+    onSubmit={handleSubmit}
+    >
     <div> Title:
       <label 
       htmlFor="post-input"
