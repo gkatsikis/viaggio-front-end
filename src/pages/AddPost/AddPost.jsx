@@ -13,7 +13,10 @@ const AddPost = (props) => {
   
   const [validForm, setValidForm] = useState(false)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 567089ee6f92cb16b8dc228452af94290f1b9100
   return (
     <>
     <h1>Add Post</h1>
