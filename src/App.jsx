@@ -23,6 +23,10 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  // const handleAddPost = newPostData => {
+  //   setPosts([...posts, newPostData])
+  // }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -43,7 +47,7 @@ const App = () => {
         />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
       </Routes>
     </>
