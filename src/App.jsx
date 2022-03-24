@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -29,9 +29,13 @@ const App = () => {
   const handleAddPost = newPostData => {
     postService.create(newPostData)
     .then(newPost => setPosts([...posts, newPost]))
+    navigate('/')
   }
 
-  
+  useEffect(() => {
+    postService.getAll()
+    .then(allPosts => setPosts(allPosts))
+  }, [])
 
   return (
     <>
