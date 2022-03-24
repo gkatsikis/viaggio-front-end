@@ -1,10 +1,11 @@
-const BASE_URL = '/api/posts'
+import * as tokenService from './tokenService'
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/posts`
 
-function create(puppy) {
+function create(post) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {'content-type': 'application/json'},
-    body: JSON.stringify(puppy)
+    body: JSON.stringify(post)
   })
 	.then(res => res.json())
 }
