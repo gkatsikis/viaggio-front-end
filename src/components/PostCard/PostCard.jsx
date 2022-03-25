@@ -7,10 +7,10 @@ const PostCard = ({post}) => {
         <h2 className="card-text">{post.title}</h2>
         <p className="card-text">{post.story}</p>
         <img 
-            src={post.postPhoto } 
-            alt="pic"
-            className="card-post-photo"
-    />
+  src={post.postPhoto ? post.postPhoto : `https://i.imgur.com/saIoSZF.jpeg`}
+  alt="A happy puppy"
+  className="card-img-top"
+/>
       </div>
     </div>  
 

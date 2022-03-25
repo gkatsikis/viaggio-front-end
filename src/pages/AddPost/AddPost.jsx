@@ -32,7 +32,7 @@ const AddPost = (props) => {
   }, [formData])
 
   const handleChangePhoto = (evt) => {
-  setFormData({...formData, photo: evt.target.files[0]})
+  setFormData({...formData, postPhoto: evt.target.files[0]})
 }
 
   return (
