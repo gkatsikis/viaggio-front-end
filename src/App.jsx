@@ -8,7 +8,8 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddPost from './pages/AddPost/AddPost'
 import PostList from './pages/PostList/PostList'
-import * as postService from './services/posts'
+import * as postService from './services/postService'
+import PostDetails from './pages/PostDetails'
 
 
 const App = () => {
@@ -59,6 +60,7 @@ console.log(posts)
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
+        <Route path="/posts/:id" element={<PostDetails user={user} />}/>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
