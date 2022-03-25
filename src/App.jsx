@@ -28,6 +28,7 @@ const App = () => {
   const [posts, setPosts] = useState([])
 
   const handleAddPost = newPostData => {
+    console.log('NEW POST DATA', newPostData)
     postService.create(newPostData)
     .then(newPost => setPosts([...posts, newPost]))
     navigate('/')
