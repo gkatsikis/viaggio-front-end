@@ -1,11 +1,12 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/posts`
 
+
 function create(post) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {'content-type': 'application/json'},
-    body: JSON.stringify(post)
+    body: post,
   })
 	.then(res => res.json())
 }
