@@ -20,7 +20,7 @@ const AddPost = (props) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     props.handleAddPost(formData)
-    create(formData)
+    // create(formData)
   }
 
   useEffect(() => {
