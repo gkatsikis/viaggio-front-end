@@ -6,9 +6,9 @@ const PostList = (props) => {
     <>
     <h1>All Posts</h1>
     <div className={styles.container}>
-        {props.posts.map(post => (
+    {props.posts.map(post =>
           <PostCard key={post._id} post={post}/>
-        ))}
+        )}
       </div>
     </>
   );

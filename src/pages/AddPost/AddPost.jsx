@@ -19,13 +19,21 @@ const AddPost = (props) => {
   
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleAddPost(formData)
+    const postFormData = new FormData()
+    postFormData.append('postPhoto', formData.postPhoto)
+    postFormData.append('title', formData.title)
+    postFormData.append('story', formData.story)
+    props.handleAddPost(postFormData)
     // create(formData)
   }
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
+
+  const handleChangePhoto = (evt) => {
+  setFormData({...formData, photo: evt.target.files[0]})
+}
 
   return (
     <>
@@ -63,7 +71,7 @@ const AddPost = (props) => {
       onChange={handleChange}
        />
     </div>
-    {/* <div>
+    <div>
       <label 
       htmlFor="post-input"
       className="post-label">
@@ -72,10 +80,11 @@ const AddPost = (props) => {
       <input 
       type="file"
       className="post-form"
-      name="photo"
-      onChange={handleChange}
+      
+      name="postPhoto"
+      onChange={handleChangePhoto}
        />
-    </div> */}
+    </div>
     <button 
     type="submit"
     className="btn"
