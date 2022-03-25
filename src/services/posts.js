@@ -8,7 +8,11 @@ function create(post) {
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(post),
   })
-	.then(res => res.json())
+	.then(res => {
+    console.log(res)
+   return res.json()
+  })
+
 }
 
 function getAll() {
