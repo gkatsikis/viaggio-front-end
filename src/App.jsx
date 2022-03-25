@@ -14,6 +14,7 @@ import * as postService from './services/posts'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [posts, setPosts] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -25,19 +26,32 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const [posts, setPosts] = useState([])
 
-  const handleAddPost = newPostData => {
-    console.log('NEW POST DATA', newPostData)
-    postService.create(newPostData)
-    .then(newPost => setPosts([...posts, newPost]))
+  // const handleAddPost = newPostData => {
+  //   console.log('NEW POST DATA', newPostData)
+  //   postService.create(newPostData)
+  //   .then(newPost => setPosts([...posts, newPost]))
+  //   navigate('/')
+  // }
+
+  const handleAddPost = async(data) => {
+    console.log('NEW POST DATA', data)
+    const newPost = await postService.create(data)
+    console.log(newPost)
+    setPosts([...posts, newPost])
     navigate('/')
   }
 
   useEffect(() => {
     postService.getAll()
-    .then(allPosts => setPosts(allPosts))
+    .then(allPosts => {
+      setPosts(allPosts)
+      console.log(allPosts)
+    }) 
   }, [])
+
+  
+console.log(posts)
 
   return (
     <>
