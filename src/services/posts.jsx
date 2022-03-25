@@ -1,12 +1,15 @@
+import * as tokenService from './tokenService'
+  
 const BASE_URL = '/api/posts'
 
-function create(puppy) {
+
+function create(post) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
-    body: puppy
+    body: post
   })
   .then(res => res.json())
 }
