@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { create } from '../../services/posts';
 
 
 
@@ -19,6 +20,7 @@ const AddPost = (props) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     props.handleAddPost(formData)
+    create(formData)
   }
 
   useEffect(() => {
