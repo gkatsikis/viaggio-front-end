@@ -19,7 +19,7 @@ function getAll() {
 
 const getPostById = async (postId) => {
   try {
-    const res = await fetch(`${BASE_URL}${postId}`)
+    const res = await fetch(`${BASE_URL}/${postId}`)
     const data = await res.json()
     return data
   } catch (error) {

@@ -15,6 +15,7 @@ const PostDetails = (props) => {
     const fetchPost = async () => {
       try {
         const postData = await postService.getPostById(id)
+        console.log('TEST:',postData, id)
         setPost(postData)
         // setComments(postData.comments)
       } catch (error) {
@@ -28,7 +29,8 @@ const PostDetails = (props) => {
   return (
     <div className="layout">
       <div className="post-details">
-        <h3>{post.title}</h3>
+        <h3>Testing</h3>
+        {post && <PostCard post={post} />}
       </div>
     </div>
 

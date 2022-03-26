@@ -5,7 +5,7 @@ const PostCard = ({post}) => {
     <div className="card">
       <Link
       className="post-card"
-      to="/post"
+      to={`/post/${post._id}`}
        >
       <div className="card-body">
         <h2 className="card-text">{post.title}</h2>
