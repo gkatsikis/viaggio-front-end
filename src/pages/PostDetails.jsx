@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import * as postService from '../services/postService'
 import PostCard from '../components/PostCard/PostCard'
+import PostActions from '../components/Post/PostActions'
 
 
 const PostDetails = (props) => {
@@ -31,6 +32,7 @@ const PostDetails = (props) => {
       <div className="post-details">
         <h3>Testing</h3>
         {post && <PostCard post={post} />}
+        <PostActions {...props}/>
       </div>
     </div>
 
