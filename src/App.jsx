@@ -58,7 +58,7 @@ const App = () => {
     const newPostArray = posts.map(post => 
       post._id === updatedPostData._id ? updatedPostData : post
     )
-    setPost(newPostArray)
+    setPosts(newPostArray)
 		navigate('/')
   }
 
