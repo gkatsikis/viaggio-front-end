@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import * as postService from '../services/postService'
 import PostCard from '../components/PostCard/PostCard'
 import PostActions from '../components/Post/PostActions'
+import { Link } from 'react-router-dom'
 
 
 const PostDetails = (props) => {
@@ -33,6 +34,11 @@ const PostDetails = (props) => {
         <h3>Testing</h3>
         {post && <PostCard post={post} />}
         <PostActions {...props}/>
+        <Link
+          className='btn btn-sm btn-warning'
+          to='/edit'
+          state={{post}}
+        ></Link>
       </div>
     </div>
 
