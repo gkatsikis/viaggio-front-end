@@ -43,6 +43,7 @@ const App = () => {
     navigate('/')
   }
 
+
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
@@ -51,8 +52,7 @@ const App = () => {
     }) 
   }, [])
 
-  
-console.log(posts)
+
 
   return (
     <>
@@ -60,7 +60,7 @@ console.log(posts)
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
-        <Route path="/post/:id" element={<PostDetails user={user} />}/>
+        <Route path="/post/:id" element={<PostDetails user={user}  />}/>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
