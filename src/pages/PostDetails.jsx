@@ -32,6 +32,11 @@ const PostDetails = (props) => {
         <h3>Testing</h3>
         {post && <PostCard post={post} />}
       </div>
+
+      <div>
+        <button>Delete Post</button>
+      </div>
+
     </div>
 
   );
