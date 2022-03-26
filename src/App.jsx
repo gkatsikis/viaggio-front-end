@@ -60,7 +60,7 @@ console.log(posts)
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
-        <Route path="/posts/:id" element={<PostDetails user={user} />}/>
+        <Route path="/post/:id" element={<PostDetails user={user} />}/>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
