@@ -27,25 +27,19 @@ const getPostById = async (postId) => {
   }
 }
 
-export const updatePost = async (postId) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${postId}`, {
-      method: "PUT",
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': 'Bearer ' + tokenService.getToken()
-      },
-    })
-    const data = await res.json()
-    return data
-  } catch (error) {
-    throw error
-  }
+function update(post) {
+  return fetch(`${BASE_URL}/${post._id}`, {
+    method: 'PUT',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(post)
+  })
+  .then(res => res.json())
 }
+
 
 export {
   create,
+  update,
   getAll,
   getPostById,
-  updatePost,
 }

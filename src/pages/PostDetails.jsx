@@ -4,6 +4,7 @@ import * as postService from '../services/postService'
 import PostCard from '../components/PostCard/PostCard'
 import PostActions from '../components/Post/PostActions'
 import { Link } from 'react-router-dom'
+import { update } from '../services/postService'
 
 
 const PostDetails = (props) => {
@@ -27,6 +28,16 @@ const PostDetails = (props) => {
     fetchPost()
   }, [id])
 
+  const handleUpdatePost = updatedPostData => {
+    postService.update(updatedPostData)
+    .then(updatedPost => {
+      const newPostArray = posts.map(post => post._id === updatedPost._id ? updatedPost : post)
+      setPost(newPostArray)
+      navigate('/')
+    })
+  }
+
+
 
   return (
     <div className="layout">
@@ -38,7 +49,7 @@ const PostDetails = (props) => {
           className='btn btn-sm btn-warning'
           to='/edit'
           state={{post}}
-        ></Link>
+        >Edit</Link>
       </div>
     </div>
 

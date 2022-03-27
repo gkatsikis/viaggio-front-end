@@ -17,7 +17,7 @@ function EditPost(props) {
 
   const handleSubmit = evt => {
 		evt.preventDefault()
-    props.handleUpdatePost(formData)
+    props.handleUpdate(formData)
 	}
 
   const handleChangePhoto = (evt) => {
@@ -59,7 +59,7 @@ function EditPost(props) {
       value={formData.story}
       required
       onChange={handleChange}
-       />
+      />
     </div>
     <div>
       <label 
@@ -73,14 +73,14 @@ function EditPost(props) {
       
       name="postPhoto"
       onChange={handleChangePhoto}
-       />
+      />
     </div>
     <button 
     type="submit"
     className="btn"
     disabled={!validForm}
     >
-      Add Your Story</button>
+      update</button>
       <div className="d-grid">
 					<Link
 						to="/"

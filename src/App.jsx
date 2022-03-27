@@ -53,7 +53,7 @@ const App = () => {
     }) 
   }, [])
 
-  const handleUpdatePost = updatedPostData => {
+  const handleUpdate = updatedPostData => {
     
     const newPostArray = posts.map(post => 
       post._id === updatedPostData._id ? updatedPostData : post
@@ -88,7 +88,7 @@ console.log(posts)
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
-        <Route path='/edit' element={<EditPost handleUpdatePuppy={handleUpdatePost}/>}/>
+        <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
       </Routes>
     </>
   )
