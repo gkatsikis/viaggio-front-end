@@ -12,8 +12,9 @@ const PostDetails = (props) => {
   const navigate = useNavigate()
 
   const handleDeletePost = async (postId) => {
+    console.log('oneParamId', postId)
     try {
-      await deletePost(post._id)
+      await deletePost(postId)
       //filter through postsState, only return the posts
       //where _id does not match postId
       setPost(post.filter((post) => post._id !== post._id))
@@ -40,8 +41,7 @@ const PostDetails = (props) => {
     <div className="layout">
       <div className="post-details">
         <h3>Testing</h3>
-        {post && <PostCard post={post} 
-        handleDeletePost={handleDeletePost} />}
+        {post && <PostCard post={post} />}
       </div>
 
       <div>
