@@ -4,7 +4,7 @@ import * as postService from '../services/postService'
 import PostCard from '../components/PostCard/PostCard'
 import PostActions from '../components/Post/PostActions'
 import { Link } from 'react-router-dom'
-import { update } from '../services/postService'
+// import { update } from '../services/postService'
 
 
 const PostDetails = (props) => {
@@ -28,14 +28,14 @@ const PostDetails = (props) => {
     fetchPost()
   }, [id])
 
-  const handleUpdatePost = updatedPostData => {
-    postService.update(updatedPostData)
-    .then(updatedPost => {
-      const newPostArray = posts.map(post => post._id === updatedPost._id ? updatedPost : post)
-      setPost(newPostArray)
-      navigate('/')
-    })
-  }
+  // const handleUpdatePost = updatedPostData => {
+  //   postService.update(updatedPostData)
+  //   .then(updatedPost => {
+  //     const newPostArray = post.map(post => post._id === updatedPost._id ? updatedPost : post)
+  //     setPost(newPostArray)
+  //     navigate('/')
+  //   })
+  // }
 
 
 

@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { update } from '../services/postService'
 
 function EditPost(props) {
+  const [post, setPost] = useState()
+  const navigate = useNavigate()
   const location = useLocation()
   const [formData, setFormData] = useState(location.state.post)
   const [validForm, setValidForm] = useState(false)
@@ -15,9 +18,19 @@ function EditPost(props) {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
 
+  const handleUpdatePost = updatedPostData => {
+    console.log(updatedPostData)
+    update(updatedPostData)
+    .then(updatedPost => {
+      const newPostArray = post.map(post => post._id === updatedPost._id ? updatedPost : post)
+      setPost(newPostArray)
+      navigate('/')
+    })
+  }
+
   const handleSubmit = evt => {
 		evt.preventDefault()
-    props.handleUpdate(formData)
+    handleUpdatePost(formData)
 	}
 
   const handleChangePhoto = (evt) => {
