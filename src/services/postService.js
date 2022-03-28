@@ -49,10 +49,28 @@ const deletePost = async (postId) => {
   }
 }
 
+const createComment = async (postId, comment) => {
+  try{
+    const res = await fetch(`${BASE_URL}/${postId}/comments`, {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json',
+          'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(comment)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   create,
   update,
   getAll,
   getPostById,
   deletePost,
+  createComment,
 }

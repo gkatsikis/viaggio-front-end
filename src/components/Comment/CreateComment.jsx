@@ -1,0 +1,23 @@
+import React, { useState } from "react"
+
+const CreateComment = (props) => {
+  const [text, setText] = useState('')
+
+  const formData = {
+    comment_text: text,
+  }
+
+  return (
+    <form className="create-comment-form">
+      <input
+        required
+        autoComplete='off'
+        placeholder="Comment"
+        name="comment_text"
+      >
+      </input>
+    </form> 
+  )
+}
+
+export default CreateComment
