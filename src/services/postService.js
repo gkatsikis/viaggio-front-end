@@ -27,15 +27,29 @@ const getPostById = async (postId) => {
   }
 }
 
-function update(post) {
-  return fetch(`${BASE_URL}/${post._id}`, {
+// function update(post) {
+//   return fetch(`${BASE_URL}/${post._id}`, {
+//     method: 'PUT',
+//     headers: {'content-type': 'application/json'},
+//     body: JSON.stringify(post)
+//   })
+//   .then(res => {
+//    const data = res.json()
+//    console.log(data)
+//    return data
+//   })
+// }
+
+async function update(post){
+  const res = await fetch(`${BASE_URL}/${post._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(post)
   })
-  .then(res => res.json())
+  const data = await res.json()
+  console.log(data)
+  return data
 }
-
 
 export {
   create,

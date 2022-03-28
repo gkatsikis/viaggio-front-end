@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { update } from '../services/postService'
-
+import  { update }  from '../../services/postService'
+// src/services/postService.js
 function EditPost(props) {
   const [post, setPost] = useState()
   const navigate = useNavigate()
@@ -22,12 +22,12 @@ function EditPost(props) {
     console.log(updatedPostData)
     update(updatedPostData)
     .then(updatedPost => {
-      const newPostArray = post.map(post => post._id === updatedPost._id ? updatedPost : post)
-      setPost(newPostArray)
-      navigate('/')
+      // const newPostArray = post.map(post => post._id === updatedPost._id ? updatedPost : post)
+      setPost(updatedPost)
+      // navigate('/')
     })
   }
-
+console.log(post)
   const handleSubmit = evt => {
 		evt.preventDefault()
     handleUpdatePost(formData)
