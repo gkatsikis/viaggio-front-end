@@ -8,8 +8,10 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import AddPost from './pages/AddPost/AddPost'
 import PostList from './pages/PostList/PostList'
+import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
+
 
 
 const App = () => {
@@ -51,6 +53,15 @@ const App = () => {
     }) 
   }, [])
 
+  const handleUpdate = updatedPostData => {
+    
+    const newPostArray = posts.map(post => 
+      post._id === updatedPostData._id ? updatedPostData : post
+    )
+    setPosts(newPostArray)
+		navigate('/')
+  }
+
   
 console.log(posts)
 
@@ -77,6 +88,7 @@ console.log(posts)
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
+        <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
       </Routes>
     </>
   )
