@@ -5,6 +5,7 @@ import PostCard from '../components/PostCard/PostCard'
 import PostActions from '../components/Post/PostActions'
 import { Link } from 'react-router-dom'
 // import { update } from '../services/postService'
+import { deletePost } from '../services/postService'
 
 
 const PostDetails = (props) => {
@@ -12,13 +13,13 @@ const PostDetails = (props) => {
   // const [comments, setComments] = useState([])
   const { id } = useParams()
   const navigate = useNavigate()
-  console.log('Post Details Params', id)
+
+  
 
   useEffect(() => {
     const fetchPost = async () => {
       try {
         const postData = await postService.getPostById(id)
-        console.log('TEST:',postData, id)
         setPost(postData)
         // setComments(postData.comments)
       } catch (error) {
@@ -42,7 +43,6 @@ const PostDetails = (props) => {
   return (
     <div className="layout">
       <div className="post-details">
-        <h3>Testing</h3>
         {post && <PostCard post={post} />}
         <PostActions {...props}/>
         <Link
@@ -51,6 +51,13 @@ const PostDetails = (props) => {
           state={{post}}
         >Edit</Link>
       </div>
+
+      <div>
+      <button
+        onClick={() => props.handleDeletePost(post._id)}
+      >Delete Post</button>
+      </div>
+
     </div>
 
   );
