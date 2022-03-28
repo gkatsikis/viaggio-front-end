@@ -76,7 +76,6 @@ const App = () => {
 		navigate('/')
   }
 
-  
 console.log(posts)
 
 
