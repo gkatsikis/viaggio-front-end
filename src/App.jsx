@@ -45,6 +45,20 @@ const App = () => {
     navigate('/')
   }
 
+  const handleDeletePost = async (postId) => {
+    console.log('oneParamId', postId)
+    try {
+      await  postService.deletePost(postId)
+      //filter through postsState, only return the posts
+      //where _id does not match postId
+      setPosts(posts.filter((post) => post._id !== postId))
+      navigate('/')
+    } catch (error) {
+      throw error
+    }
+  }
+
+
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
@@ -65,13 +79,14 @@ const App = () => {
   
 console.log(posts)
 
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
-        <Route path="/post/:id" element={<PostDetails user={user} />}/>
+        <Route path="/post/:id" element={<PostDetails user={user} handleDeletePost={handleDeletePost} />}/>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

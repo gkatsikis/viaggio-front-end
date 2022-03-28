@@ -27,19 +27,6 @@ const getPostById = async (postId) => {
   }
 }
 
-// function update(post) {
-//   return fetch(`${BASE_URL}/${post._id}`, {
-//     method: 'PUT',
-//     headers: {'content-type': 'application/json'},
-//     body: JSON.stringify(post)
-//   })
-//   .then(res => {
-//    const data = res.json()
-//    console.log(data)
-//    return data
-//   })
-// }
-
 async function update(post){
   const res = await fetch(`${BASE_URL}/${post._id}`, {
     method: 'PUT',
@@ -51,9 +38,21 @@ async function update(post){
   return data
 }
 
+const deletePost = async (postId) => {
+  try {
+    await fetch(`${BASE_URL}/${postId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   create,
   update,
   getAll,
   getPostById,
+  deletePost,
 }
