@@ -7,8 +7,17 @@ const CreateComment = (props) => {
     comment_text: text,
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.handleCreateComment(formData)
+    setText('')
+  }
+
   return (
-    <form className="create-comment-form">
+    <form 
+    className="create-comment-form"
+    onSubmit={handleSubmit}
+    >
       <input
         required
         autoComplete='off'
