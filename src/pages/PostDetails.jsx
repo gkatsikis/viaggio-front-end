@@ -11,17 +11,7 @@ const PostDetails = (props) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const handleDeletePost = async (postId) => {
-    console.log('oneParamId', postId)
-    try {
-      await deletePost(postId)
-      //filter through postsState, only return the posts
-      //where _id does not match postId
-      setPost(post.filter((post) => post._id !== post._id))
-    } catch (error) {
-      throw error
-    }
-  }
+  
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -40,13 +30,12 @@ const PostDetails = (props) => {
   return (
     <div className="layout">
       <div className="post-details">
-        <h3>Testing</h3>
         {post && <PostCard post={post} />}
       </div>
 
       <div>
       <button
-        onClick={() => handleDeletePost(post._id)}
+        onClick={() => props.handleDeletePost(post._id)}
       >Delete Post</button>
       </div>
 
