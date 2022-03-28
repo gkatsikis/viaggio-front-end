@@ -36,7 +36,7 @@ const PostDetails = (props) => {
       <div className="post-details">
         {post && <PostCard post={post} />}
         <PostActions {...props}/>
-        <CommentSection 
+        <CommentSection     
           post={post}
           setPost={setPost}
           comments={comments}
