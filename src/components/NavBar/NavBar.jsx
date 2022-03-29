@@ -35,6 +35,9 @@ const NavBar = ({ user, handleLogout }) => {
       <li className="nav-item">
       <Link className="nav-link" to="/addpost">add post</Link>
       </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/createBucketList">Create Bucket List</Link>
+      </li>
     </ul>
   </div>
 </nav>
