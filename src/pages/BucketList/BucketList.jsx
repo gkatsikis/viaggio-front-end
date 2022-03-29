@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CreateBucketListForm from '../../components/CreateBucketListForm/CreateBucketListForm';
 import ListItem from "../../components/ListItem/ListItem";
 
 const BucketList = () => {
@@ -9,6 +10,7 @@ const BucketList = () => {
   return (  
     <>
       <h1>Bucket List</h1>
+      <CreateBucketListForm />
       <ListItem />
     </>
   );

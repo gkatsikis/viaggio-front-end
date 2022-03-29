@@ -14,8 +14,15 @@ const CreateBucketListForm = () => {
     <>
     <h1>Add to Bucket List</h1>
     <form autocomplete="off">
-      <div>
-        
+      <div> Location:
+        <label htmlFor="item-input"
+        className='item-label'>
+        </label>
+        <input type="text" 
+        className='item-form'
+        value={formData.location}
+        required
+        />
       </div>
 
     </form>
