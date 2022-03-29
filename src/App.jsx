@@ -11,6 +11,8 @@ import PostList from './pages/PostList/PostList'
 import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
+import BucketList from './pages/BucketList/BucketList'
+import * as bucketlistService from './services/bucketlistService'
 
 
 
@@ -103,6 +105,7 @@ console.log(posts)
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
+        <Route path="/createBucketList" element={<BucketList />}/>
       </Routes>
     </>
   )
