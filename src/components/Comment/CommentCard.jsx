@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentActions from './CommentsActions'
+import CommentActions from './CommentActions'
 
 const CommentCard = (props) => {
   return (

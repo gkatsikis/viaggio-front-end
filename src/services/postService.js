@@ -103,4 +103,5 @@ export {
   deletePost,
   createComment,
   updateComment,
+  deleteComment,
 }
