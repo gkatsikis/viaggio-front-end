@@ -33,7 +33,7 @@ const CreateBucketListForm = (props) => {
 
   return (  
     <>
-    <h1>Add to Bucket List</h1>
+    <h3>Add to Bucket List</h3>
     <form autoComplete="off"
     ref={formElement}
     onSubmit={handleSubmit}
