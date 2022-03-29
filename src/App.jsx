@@ -11,6 +11,7 @@ import PostList from './pages/PostList/PostList'
 import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
+import Destination from './pages/Destination/Destination'
 
 
 
@@ -85,6 +86,7 @@ console.log(posts)
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
+        <Route path="/destination" element={<Destination />} />
         <Route path="/post/:id" element={<PostDetails user={user} handleDeletePost={handleDeletePost} />}/>
         <Route
           path="/signup"
