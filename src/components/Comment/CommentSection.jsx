@@ -28,6 +28,15 @@ const CommentSection = (props) => {
       throw error
     }
   }
+
+  const handleDeleteComment = async (commentId) => {
+    try {
+      await postService.deleteComment(props.post._id, commentId)
+      props.setComments(props.comments.filter(comment => comment._id !== commentId))
+    } catch (error) {
+      throw error
+    }
+  }
   
   return (
     <div className="comment-section">
