@@ -1,7 +1,7 @@
-const ListItem = ({item}) => {
+const ListItem = ({props}) => {
   return (  
     <div>
-      <h3>Item</h3>
+      <h3>Your Bucket List Items Here: </h3>
     </div>
   );
 }

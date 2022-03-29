@@ -10,7 +10,6 @@ const CreateBucketListForm = (props) => {
   })
 
   const handleChange = evt => {
-    console.log('This is:', evt)
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
