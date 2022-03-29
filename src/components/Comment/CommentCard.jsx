@@ -3,7 +3,10 @@ import CommentActions from './CommentsActions'
 
 const CommentCard = (props) => {
   return (
-    <div className='comment-card'></div>
+    <div className='comment-card'>
+      <CommentActions {...props} />
+    </div>
+    
   )
 }
 
