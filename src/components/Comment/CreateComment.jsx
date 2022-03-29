@@ -23,8 +23,11 @@ const CreateComment = (props) => {
         autoComplete='off'
         placeholder="Comment"
         name="comment_text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       >
       </input>
+      <button type="submit">Submit</button>
     </form> 
   )
 }

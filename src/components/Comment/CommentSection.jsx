@@ -12,11 +12,28 @@ const CommentSection = (props) => {
       throw error
     }
   }
+
+  const handleUpdateComment = async (commentId) => {
+    try {
+      const updatedPost = await postService.updateComment(props.post._id, commentId)
+      const newComment = updatedPost.comments.find((comment) => comment._id === commentId)
+
+      const updatedCommentArray = props.comments.map((comment) => (
+        comment._id === commentId ? newComment : comment
+      ))
+      
+      props.setPost(updatedPost)
+      props.setComments(updatedCommentArray)
+    } catch (error) {
+      throw error
+    }
+  }
   
   return (
     <div className="comment-section">
       <CreateComment {...props} handleCreateComment={handleCreateComment} />
       <CommentList {...props}
+      handleUpdateComment={handleUpdateComment}
       />
     </div>
   )

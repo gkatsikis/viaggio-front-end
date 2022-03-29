@@ -66,6 +66,22 @@ const createComment = async (postId, comment) => {
   }
 }
 
+const updateComment = async (postId, commentId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${postId}/comments/${commentId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   create,
   update,
@@ -73,4 +89,5 @@ export {
   getPostById,
   deletePost,
   createComment,
+  updateComment,
 }
