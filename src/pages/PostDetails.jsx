@@ -22,13 +22,25 @@ const PostDetails = (props) => {
       try {
         const postData = await postService.getPostById(id)
         setPost(postData)
-        // setComments(postData.comments)
       } catch (error) {
         throw error
       }
     }
     fetchPost()
   }, [id])
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        
+        setComments(post.comments)
+      } catch (error) {
+        throw error
+      }
+    }
+    fetchPost()
+  }, [post])
+
 
 
   return (

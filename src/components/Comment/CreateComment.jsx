@@ -4,7 +4,7 @@ const CreateComment = (props) => {
   const [text, setText] = useState('')
 
   const formData = {
-    comment_text: text,
+    content: text,
   }
 
   const handleSubmit = (e) => {
@@ -22,7 +22,7 @@ const CreateComment = (props) => {
         required
         autoComplete='off'
         placeholder="Comment"
-        name="comment_text"
+        name="content"
         value={text}
         onChange={(e) => setText(e.target.value)}
       >

@@ -84,7 +84,7 @@ const updateComment = async (postId, commentId) => {
 
 const deleteComment = async (postId, commentId) => {
   try {
-    await fetch(`${BASE_URL}${postId}/comments/${commentId}`, {
+    await fetch(`${BASE_URL}/${postId}/comments/${commentId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + tokenService.getToken()
