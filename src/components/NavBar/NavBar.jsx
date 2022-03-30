@@ -26,14 +26,17 @@ const NavBar = ({ user, handleLogout }) => {
       </li>
       
       <li className="nav-item">
-      <Link className="nav-link" to="" onClick={handleLogout}>LOG OUT</Link>
+      <Link className="nav-link" to="" onClick={handleLogout}>Log Out</Link>
       </li>
 
       <li className="nav-item">
         <Link className="nav-link" to="/changePassword">Change Password</Link>
       </li>
       <li className="nav-item">
-      <Link className="nav-link" to="/addpost">add post</Link>
+      <Link className="nav-link" to="/addpost">Add post</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/createBucketList">Create Bucket List</Link>
       </li>
     </ul>
   </div>
