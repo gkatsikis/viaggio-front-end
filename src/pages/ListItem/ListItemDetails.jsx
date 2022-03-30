@@ -22,12 +22,12 @@ const ListItemDetails = (props) => {
 
   return (  
     <div>
-      <h1>Here are your list details</h1>
+      <h3>Here are your list details</h3>
       <div>
         <p>Location: {listItem.location}</p>
         <p>Season: {listItem.season}</p>
         <p>To Do: {listItem.todo}</p>
-        <p>Done: {listItem.fulfilled}</p>
+        <p>Done: {listItem.fulfilled === true ? 'Done' : 'Not Done'}</p>
       </div>
     </div>
   );
