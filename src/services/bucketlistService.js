@@ -1,13 +1,13 @@
 import * as tokenService from './tokenService'
-const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/bucketlists`
+const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/listItems`
 
-function create(bucketlist) {
+function create(listItem) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
-    body: bucketlist
+    body: listItem
   })
   .then(res => res.json())
 }
@@ -17,9 +17,9 @@ function getAll() {
   .then(res => res.json())
 }
 
-const getBucketlistById = async (bucketlistId) => {
+const getlistItemById = async (listItemId) => {
   try {
-    const res = await fetch(`${BASE_URL}/${bucketlistId}`)
+    const res = await fetch(`${BASE_URL}/${listItemId}`)
     const data = await res.json()
     return data
   } catch (error){
@@ -27,20 +27,20 @@ const getBucketlistById = async (bucketlistId) => {
   }
 }
 
-async function update(bucketlist){
-  const res = await fetch(`${BASE_URL}/${bucketlist._id}`, {
+async function update(listItem){
+  const res = await fetch(`${BASE_URL}/${listItem._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
-    body: JSON.stringify(bucketlist)
+    body: JSON.stringify(listItem)
   })
   const data = await res.json()
   console.log(data)
   return data
 }
 
-const deleteBucketlist = async (bucketlistId) => {
+const deleteListItem = async (listItemId) => {
   try {
-    await fetch(`${BASE_URL}/${bucketlistId}`, {
+    await fetch(`${BASE_URL}/${listItemId}`, {
       method: 'DELETE',
       headers: {'Authorization': 'Bearer ' + tokenService.getToken() }
     })
@@ -52,7 +52,7 @@ const deleteBucketlist = async (bucketlistId) => {
 export {
   create,
   getAll,
-  getBucketlistById,
+  getlistItemById,
   update,
-  deleteBucketlist,
+  deleteListItem,
 }

@@ -15,11 +15,11 @@ import BucketList from './pages/BucketList/BucketList'
 import * as bucketlistService from './services/bucketlistService'
 
 
-
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+  const [listItems, setListItems] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -60,13 +60,19 @@ const App = () => {
     }
   }
 
-
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
       setPosts(allPosts)
     }) 
   }, [])
+
+  // useEffect(() => {
+  //   bucketlistService.getAll()
+  //   .then(allBucketLists => {
+  //     setBucketLists(allBucketLists)
+  //   }) 
+  // }, [])
 
   const handleUpdate = updatedPostData => {
     

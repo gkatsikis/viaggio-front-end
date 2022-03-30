@@ -9,9 +9,7 @@ const BucketList = () => {
   const navigate = useNavigate()
 
 const handleCreateItem = async(data) => {
-  console.log('NEW LIST ITEM DATA:', data)
   const newListItem = await bucketlistService.create(data)
-  console.log(newListItem)
   setListItems([...listItems, newListItem])
   navigate('/createBucketList') //need to make this a blank form after submitting
 }
