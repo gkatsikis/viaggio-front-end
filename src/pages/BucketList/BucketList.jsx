@@ -20,7 +20,12 @@ const handleCreateItem = async(data) => {
     <>
       <h1>Bucket List</h1>
       <CreateBucketListForm handleCreateItem={handleCreateItem}/>
-      <ListItem />
+      <h3>Your Bucket List Items Here:</h3>
+      <div>
+        {listItems.map (listItem =>
+          <ListItem key={listItem._id} listItem={listItem}/>
+          )}
+      </div>
     </>
   );
 }
