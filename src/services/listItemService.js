@@ -21,7 +21,7 @@ function getAll() {
   .then(res => res.json())
 }
 
-const getlistItemById = async (listItemId) => {
+const getListItemById = async (listItemId) => {
   try {
     const res = await fetch(`${BASE_URL}/${listItemId}`)
     const data = await res.json()
@@ -56,7 +56,7 @@ const deleteListItem = async (listItemId) => {
 export {
   create,
   getAll,
-  getlistItemById,
+  getListItemById,
   update,
   deleteListItem,
 }

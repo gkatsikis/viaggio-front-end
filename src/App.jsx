@@ -13,6 +13,7 @@ import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
 import BucketList from './pages/BucketList/BucketList'
 import * as listItemService from './services/listItemService'
+import ListItemDetails from './pages/ListItem/ListItemDetails'
 
 
 const App = () => {
@@ -104,6 +105,7 @@ const App = () => {
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
         <Route path="/createBucketList" element={<BucketList />}/>
+        <Route path="/listItem/:id" element={<ListItemDetails />}/>
       </Routes>
     </>
   )
