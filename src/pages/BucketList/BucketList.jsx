@@ -15,10 +15,8 @@ const handleCreateItem = async(data) => {
 }
 
 useEffect(() => {
-  console.log('Yellow')
   listItemService.getAll()
   .then(allListItems => {
-    console.log('BLUE', allListItems)
     setListItems(allListItems)
   }) 
 }, [])

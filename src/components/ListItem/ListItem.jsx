@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const ListItem = ({listItem}) => {
-  console.log('This is the:', listItem)
   return ( 
     <>
     <div>
