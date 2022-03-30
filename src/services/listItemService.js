@@ -21,15 +21,24 @@ function getAll() {
   .then(res => res.json())
 }
 
-const getListItemById = async (listItemId) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${listItemId}`)
-    const data = await res.json()
-    return data
-  } catch (error){
-    throw error
-  }
+function getListItemById(listItemId) {
+  return fetch(`${BASE_URL}/${listItemId}`, {
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
 }
+
+// const getListItemById = async (listItemId) => {
+//   try {
+//     const res = await fetch(`${BASE_URL}/${listItemId}`)
+//     const data = await res.json()
+//     return data
+//   } catch (error){
+//     throw error
+//   }
+// }
 
 async function update(listItem){
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {

@@ -105,7 +105,7 @@ const App = () => {
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
         <Route path="/createBucketList" element={<BucketList />}/>
-        <Route path="/listItem/:id" element={<ListItemDetails />}/>
+        <Route path="/listItem/:id" element={<ListItemDetails user={user}/>}/>
       </Routes>
     </>
   )

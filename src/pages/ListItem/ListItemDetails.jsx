@@ -4,7 +4,7 @@ import * as listItemService from '../../services/listItemService'
 import ListItem from '../../components/ListItem/ListItem'
 
 const ListItemDetails = (props) => {
-  const [listItems, setListItems] = useState([])
+  const [listItem, setListItem] = useState([])
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -12,7 +12,7 @@ const ListItemDetails = (props) => {
     const fetchListItem = async () => {
       try {
         const listItemData = await listItemService.getListItemById(id)
-        setListItems(listItemData)
+        setListItem(listItemData)
       } catch (error) {
         throw error
       }
@@ -23,6 +23,12 @@ const ListItemDetails = (props) => {
   return (  
     <div>
       <h1>Here are your list details</h1>
+      <div>
+        <p>Location: {listItem.location}</p>
+        <p>Season: {listItem.season}</p>
+        <p>To Do: {listItem.todo}</p>
+        <p>Done: {listItem.fulfilled}</p>
+      </div>
     </div>
   );
 }
