@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import * as bucketlistService from '../../services/bucketlistService'
+import * as bucketlistService from '../../services/listItemService'
 import ListItem from '../../components/ListItem/ListItem'
 
 const ListItemDetails = (props) => {

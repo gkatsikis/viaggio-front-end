@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CreateBucketListForm from '../../components/CreateBucketListForm/CreateBucketListForm';
+import ListItemForm from '../../components/ListItemForm/ListItemForm';
 import ListItem from "../../components/ListItem/ListItem";
-import * as bucketlistService from '../../services/bucketlistService'
+import * as listItemService from '../../services/listItemService'
 
 const BucketList = () => {
   const [listItems, setListItems] = useState([])
   const navigate = useNavigate()
 
 const handleCreateItem = async(data) => {
-  const newListItem = await bucketlistService.create(data)
+  const newListItem = await listItemService.create(data)
   setListItems([...listItems, newListItem])
   navigate('/createBucketList') //need to make this a blank form after submitting
 }
 
+useEffect(() => {
+  console.log('Yellow')
+  listItemService.getAll()
+  .then(allListItems => {
+    console.log('BLUE', allListItems)
+    setListItems(allListItems)
+  }) 
+}, [])
+
   return (  
     <>
       <h1>Bucket List</h1>
-      <CreateBucketListForm handleCreateItem={handleCreateItem}/>
+      <ListItemForm handleCreateItem={handleCreateItem}/>
       <h3>Your Bucket List Items Here:</h3>
       <div>
         {listItems.map (listItem =>

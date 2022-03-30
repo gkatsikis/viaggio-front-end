@@ -13,7 +13,11 @@ function create(listItem) {
 }
 
 function getAll() {
-  return fetch(BASE_URL)
+  return fetch(BASE_URL, {
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
   .then(res => res.json())
 }
 

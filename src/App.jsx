@@ -12,7 +12,7 @@ import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
 import BucketList from './pages/BucketList/BucketList'
-import * as bucketlistService from './services/bucketlistService'
+import * as listItemService from './services/listItemService'
 
 
 const App = () => {
@@ -67,12 +67,7 @@ const App = () => {
     }) 
   }, [])
 
-  // useEffect(() => {
-  //   bucketlistService.getAll()
-  //   .then(allBucketLists => {
-  //     setBucketLists(allBucketLists)
-  //   }) 
-  // }, [])
+ 
 
   const handleUpdate = updatedPostData => {
     
