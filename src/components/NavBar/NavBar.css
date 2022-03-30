@@ -1,0 +1,47 @@
+
+
+@media screen and (max-width: 540px) {
+  .the-nav{
+    display: none;
+  }
+
+  .mobile{
+    margin:auto;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    border-radius: 20px;
+    
+  }
+  .mobile-nav-wrap{
+    margin: auto;
+  }
+
+  .mobile-nav-list{
+    
+    align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    
+    
+  }
+  
+
+  ul > li {
+    display: inline-block;
+    
+  }
+
+  li {
+    
+  }
+}

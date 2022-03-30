@@ -15,7 +15,8 @@ const NavBar = ({ user, handleLogout }) => {
         //   </ul>
         // </nav>
 
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -48,7 +49,18 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
         </nav>
+
+        
       }
+      <div className='mobile-nav-wrap'>
+      <nav className='mobile'>
+      <ul className='mobile-nav-list'>
+            <div><li><Link to="/"><i class="fa-solid fa-house"></i></Link></li></div>
+            <div><li><Link to="/addPost"><i class="fa-solid fa-plus"></i></Link></li></div>
+            <div><li><Link to="/login"><i class="fa-solid fa-user"></i></Link></li></div>
+          </ul>
+      </nav>
+      </div>
     </>
   )
 }
