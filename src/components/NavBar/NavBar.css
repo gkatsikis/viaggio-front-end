@@ -7,14 +7,14 @@
 
   .mobile{
     margin:auto;
-    width: 200px;
-    background-color: rgb(255, 255, 255);
+    width: 35px;
     position: fixed;
-    bottom: 0;
-    color: white;
+    left: 0;
+    color: rgb(12, 12, 12);
     text-align: center;
     z-index: 1;
-    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
     
   }
   .mobile-nav-wrap{
@@ -26,7 +26,7 @@
     align-items: center;
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     padding-right: 10px;
     padding-left: 10px;

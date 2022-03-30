@@ -22,12 +22,12 @@ body{
   .main-container{
     margin: auto;
     max-width: 350px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     z-index: 100;
   }
 
-  .card{
-    margin:15px;
+  .location{
+    margin: auto;
   }
 
   
