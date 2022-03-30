@@ -12,6 +12,7 @@ import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
 import Destination from './pages/Destination/Destination'
+import * as destService from './services/destService'
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+  const [locations, setLocations] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -39,6 +41,10 @@ const App = () => {
   // }
   const handleAddDestination = async(data) => {
     console.log('NEW DESTINATION DATAAAAAAAAAAAAA', data)
+    const newLocation = await destService.create(data)
+    console.log('this is newLocation!!!', newLocation)
+    setLocations([...locations, newLocation])
+    navigate('/destination')
   }
 
   const handleAddPost = async(data) => {
