@@ -59,12 +59,10 @@ const App = () => {
     }
   }
 
-
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
       setPosts(allPosts)
-      console.log(allPosts)
     }) 
   }, [])
 
@@ -76,9 +74,6 @@ const App = () => {
     setPosts(newPostArray)
 		navigate('/')
   }
-
-console.log(posts)
-
 
   return (
     <>
