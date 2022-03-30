@@ -10,7 +10,7 @@ const Destination = (props) => {
   return ( 
     <>
       <h1>Where have you always wanted to go?</h1>
-      <DestinationForm />
+      <DestinationForm handleAddDestination={props.handleAddDestination}/>
       <hr />
       <DestintaionList />
     </>

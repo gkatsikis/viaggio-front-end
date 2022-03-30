@@ -18,7 +18,11 @@ const DestinationForm = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    const postFormData = new FormData
+    const postFormData = new FormData()
+    postFormData.append('destName', formData.destName)
+    postFormData.append('location', formData.location)
+    postFormData.append('category', formData.category)
+    props.handleAddDestination(postFormData)
   }
 
   useEffect(() => {

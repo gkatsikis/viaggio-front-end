@@ -37,6 +37,9 @@ const App = () => {
   //   .then(newPost => setPosts([...posts, newPost]))
   //   navigate('/')
   // }
+  const handleAddDestination = async(data) => {
+    console.log('NEW DESTINATION DATAAAAAAAAAAAAA', data)
+  }
 
   const handleAddPost = async(data) => {
     console.log('NEW POST DATA', data)
@@ -81,7 +84,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
-        <Route path="/destination" element={<Destination />} />
+        <Route path="/destination" element={<Destination handleAddDestination={handleAddDestination} />} />
         <Route path="/post/:id" element={<PostDetails user={user} handleDeletePost={handleDeletePost} />}/>
         <Route
           path="/signup"
