@@ -52,6 +52,9 @@ const DestinationForm = (props) => {
             <option value="art">Art Venue</option>
           </select>
          </div>
+         <button
+         type="submit"
+         className="btn">Add a Destination</button>
       </form>
     </>
    );
