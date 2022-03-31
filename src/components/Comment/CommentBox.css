@@ -1,0 +1,31 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+
+#commentbox{
+  display: flex;
+  justify-content: center;
+}
+.comment{
+  border-radius: 25px;
+  border: none;
+}
+
+#comment-submit{
+  border: none;
+  background-color: rgb(3, 167, 167);
+  color: white;
+}
+
+#comment-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.comment-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

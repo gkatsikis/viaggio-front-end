@@ -21,7 +21,7 @@ const CommentSection = (props) => {
       const updatedCommentArray = props.comments.map((comment) => (
         comment._id === commentId ? newComment : comment
       ))
-      
+
       props.setPost(updatedPost)
       props.setComments(updatedCommentArray)
     } catch (error) {
@@ -37,14 +37,16 @@ const CommentSection = (props) => {
       throw error
     }
   }
-  
+
   return (
-    <div className="comment-section">
-      <CreateComment {...props} handleCreateComment={handleCreateComment} />
-      <CommentList {...props}
-      handleUpdateComment={handleUpdateComment}
-      handleDeleteComment={handleDeleteComment}
+    <div >
+      <div><CreateComment {...props} handleCreateComment={handleCreateComment} /></div>
+      <div className="comment-section">
+        <CommentList {...props}
+        handleUpdateComment={handleUpdateComment}
+        handleDeleteComment={handleDeleteComment}
       />
+      </div>
     </div>
   )
 }

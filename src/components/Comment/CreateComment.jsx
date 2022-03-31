@@ -1,3 +1,4 @@
+import styles from './CommentBox.css'
 import React, { useState } from "react"
 
 const CreateComment = (props) => {
@@ -14,11 +15,13 @@ const CreateComment = (props) => {
   }
 
   return (
+    <div id='commentbox'>
     <form 
     className="create-comment-form"
     onSubmit={handleSubmit}
     >
       <input
+      className='comment'
         required
         autoComplete='off'
         placeholder="Comment"
@@ -27,8 +30,9 @@ const CreateComment = (props) => {
         onChange={(e) => setText(e.target.value)}
       >
       </input>
-      <button type="submit">Submit</button>
+      <button id='comment-submit' type="submit">Submit</button>
     </form> 
+    </div>
   )
 }
 
