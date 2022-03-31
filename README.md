@@ -2,7 +2,7 @@
 
 Viaggio is a travel inspiration app designed to fuel travel exploration dreams and make them a reality. Recognizing there were no apps dedicated specifically to the dream stage of travel, we set out to solve this problem. 
 
-##### "You have to dream before your dreams can come true" ~ A.P.J. Abdul Kalam
+##### *"You have to dream before your dreams can come true"* ~ A.P.J. Abdul Kalam
 ---
 ## Check out the app
 
