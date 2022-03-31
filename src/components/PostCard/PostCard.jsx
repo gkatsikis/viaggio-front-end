@@ -6,7 +6,10 @@ const PostCard = ({post}) => {
   
   return (  
 
-  
+    <Link
+          className="post-card"
+          to={`/post/${post._id}`}
+          >
   <div className="main-container row row-cols-1 row-cols-md-3 g-4">
     <div className="col">
       <div className="card">
@@ -22,6 +25,7 @@ const PostCard = ({post}) => {
       </div>
     </div>
     </div>
+    </Link>
   
 
     
@@ -35,16 +39,4 @@ const PostCard = ({post}) => {
   
   export default PostCard;
   
-  // <div className='card-title'><h2 className="card-text">{post.title}</h2></div>
-// <Link
-//       className="post-card"
-//       to={`/post/${post._id}`}
-//       >
-        // <img 
-        // src={post.postPhoto ? post.postPhoto : `https://i.imgur.com/saIoSZF.jpeg`}
-        // alt="unhappy child canoing"
-        // className="card-img-top"
-        // />
-//       </Link>
-
-// <h2 className="card-text">{post.title}</h2>
+  
