@@ -22,7 +22,6 @@ function EditPost(props) {
     console.log(updatedPostData)
     update(updatedPostData)
     .then(updatedPost => {
-      // const newPostArray = post.map(post => post._id === updatedPost._id ? updatedPost : post)
       setPost(updatedPost)
       navigate('/')
     })

@@ -1,28 +1,39 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
+import PostList from '../PostList/PostList'
+import PostCard from '../../components/PostCard/PostCard'
 
-const Profiles = () => {
-  const [profiles, setProfiles] = useState([])
+const Profiles = (props) => {
+  const [profile, setProfile] = useState([])
 
+  const params = useParams()
+  console.log('blue:', profile)
   useEffect(()=> {
-    profileService.getAllProfiles()
-    .then(profiles => setProfiles(profiles))
-  }, [])
+    profileService.getProfileById(params.id)
+    .then(profile => setProfile(profile))
+  }, [params.id])
+
 
   return (
-    <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.length ? 
+    <div>
+      <h1>Welcome to Your Viaggio Profile</h1>
+      <div>
+        {profile._id ? 
         <>
-          {profiles.map(profile=>
-            <p key={profile._id}>{profile.name}</p>
-          )}
+        
+        {profile.name}
+        {profile.posts.map(post =>
+          <PostCard key={post._id} post={post}/>
+    
+        )}
         </>
-      :
-        <p>No profiles yet</p>
+        :
+        ''
       }
-    </>
+      </div> 
+    </div>
   )
 }
- 
+
 export default Profiles

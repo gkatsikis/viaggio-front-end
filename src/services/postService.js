@@ -49,10 +49,59 @@ const deletePost = async (postId) => {
   }
 }
 
+const createComment = async (postId, comment) => {
+  try{
+    const res = await fetch(`${BASE_URL}/${postId}/comments`, {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json',
+          'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+      body: JSON.stringify(comment)
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+const updateComment = async (postId, commentId) => {
+  try {
+    const res = await fetch(`${BASE_URL}${postId}/comments/${commentId}`, {
+      method: "PUT",
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+const deleteComment = async (postId, commentId) => {
+  try {
+    await fetch(`${BASE_URL}/${postId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': 'Bearer ' + tokenService.getToken()
+      }
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
 export {
   create,
   update,
   getAll,
   getPostById,
   deletePost,
+  createComment,
+  updateComment,
+  deleteComment,
 }

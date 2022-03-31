@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../src/App.css'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -11,16 +12,26 @@ import PostList from './pages/PostList/PostList'
 import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
+<<<<<<< HEAD
 import Destination from './pages/Destination/Destination'
 import * as destService from './services/destService'
 
+=======
+import BucketList from './pages/BucketList/BucketList'
+import * as listItemService from './services/listItemService'
+import ListItemDetails from './pages/ListItem/ListItemDetails'
+>>>>>>> main
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+<<<<<<< HEAD
   const [locations, setLocations] = useState([])
+=======
+  const [listItem, setListItem] = useState([])
+>>>>>>> main
 
   const handleLogout = () => {
     authService.logout()
@@ -67,12 +78,27 @@ const App = () => {
     }
   }
 
+<<<<<<< HEAD
+=======
+  const handleDeleteListItem = async (listItemId) => {
+    try {
+      await listItemService.deleteListItem(listItemId)
+      setListItem()
+    } catch (error) {
+      throw error
+    }
+    navigate('/createBucketList')
+  }
+
+>>>>>>> main
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
       setPosts(allPosts)
     }) 
   }, [])
+
+ 
 
   const handleUpdate = updatedPostData => {
     
@@ -100,7 +126,7 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path="/profile/:id"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
@@ -108,6 +134,8 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
+        <Route path="/createBucketList" element={<BucketList />}/>
+        <Route path="/listItem/:id" element={<ListItemDetails user={user} handleDeleteListItem={handleDeleteListItem}  />}/>
       </Routes>
     </>
   )

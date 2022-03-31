@@ -2,11 +2,11 @@ import styles from './PostList.css'
 import PostCard from '../../components/PostCard/PostCard';
 
 const PostList = (props) => {
-  
+  console.log('Yellow', props.post)
   return (  
     <>
-    <h1>All Posts</h1>
-    <div className={styles.container}>
+    
+    <div className="full-container">
     {props.posts.map(post =>
           <PostCard key={post._id} post={post}/>
     
