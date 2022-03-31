@@ -75,6 +75,15 @@ const SignupForm = props => {
           name="password"
           onChange={handleChange}
         />
+        <label htmlFor="confirm" className={styles.label}>Confirm Password</label>
+        <input
+          type="password"
+          autoComplete="off"
+          id="confirm"
+          value={passwordConf}
+          name="passwordConf"
+          onChange={handleChange}
+        />
       </div>
       <button className="cta-btn" disabled={isFormInvalid}>Log In</button>
       Dont have an account?
