@@ -17,42 +17,65 @@ function getAll() {
   .then(res => res.json())
 }
 
+
+// const getPostById = async (postId) => {
+  //   try {
+    //     const res = await fetch(`${BASE_URL}/${postId}`)
+    //     const data = await res.json()
+    //     return data
+    //   } catch (error) {
+      //     throw error
+      //   }
+      // }
+      
+      // async function update(post){
+        //   const res = await fetch(`${BASE_URL}/${post._id}`, {
+          //     method: 'PUT',
+          //     headers: {'content-type': 'application/json'},
+          //     body: JSON.stringify(post)
+          //   })
+          //   const data = await res.json()
+          //   console.log(data)
+          //   return data
+          // }
+          
 function getPostById(postId) {
   return fetch(`${BASE_URL}/${postId}`)
   .then(res => res.json())
+  .catch(err => {
+    console.log(err)
+  })
 }
 
-// const getPostById = async (postId) => {
-//   try {
-//     const res = await fetch(`${BASE_URL}/${postId}`)
-//     const data = await res.json()
-//     return data
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-async function update(post){
-  const res = await fetch(`${BASE_URL}/${post._id}`, {
+function update(post) {
+  return fetch(`${BASE_URL}/${post._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
     body: JSON.stringify(post)
   })
-  const data = await res.json()
-  console.log(data)
-  return data
+  .then(res => res.json())
 }
 
-const deletePost = async (postId) => {
-  try {
-    await fetch(`${BASE_URL}/${postId}`, {
-      method: 'DELETE',
-      headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
-    })
-  } catch (error) {
-    throw error
-  }
+function deletePost(postId) {
+  return fetch(`${BASE_URL}/${postId}`, {
+    method: 'DELETE',
+    headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
+  })
+  .catch(err => {
+    console.log(err)
+  })
 }
+
+// const deletePost = async (postId) => {
+//   try {
+//     await fetch(`${BASE_URL}/${postId}`, {
+//       method: 'DELETE',
+//       headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
+//     })
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 const createComment = async (postId, comment) => {
   try{
