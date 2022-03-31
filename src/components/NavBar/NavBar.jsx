@@ -6,7 +6,7 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       {user ?
 
-  <div class="navbar" hidden>
+  <div class="navbar" >
   <Link to="/"><i class="fa-solid fa-house"></i></Link>
 
   <Link to="/login"><i class="fa-solid fa-user"></i></Link>

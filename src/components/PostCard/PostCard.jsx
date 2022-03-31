@@ -6,7 +6,10 @@ const PostCard = ({post}) => {
   
   return (  
 
-  
+    <Link
+          className="post-card"
+          to={`/post/${post._id}`}
+          >
   <div className="main-container row row-cols-1 row-cols-md-3 g-4">
     <div className="col">
       <div className="card">
@@ -22,6 +25,7 @@ const PostCard = ({post}) => {
       </div>
     </div>
     </div>
+    </Link>
   
 
     
