@@ -1,28 +1,26 @@
 import { useState, useEffect } from 'react'
+import PostCard from '../../components/PostCard/PostCard'
 import * as profileService from '../../services/profileService'
+import * as postService from '../../services/postService'
+import PostList from '../PostList/PostList'
 
-const Profiles = () => {
-  const [profiles, setProfiles] = useState([])
+const Profiles = (props) => {
+  // const [profiles, setProfiles] = useState([])
+  const [posts, setPosts] = useState([])
 
   useEffect(()=> {
-    profileService.getAllProfiles()
-    .then(profiles => setProfiles(profiles))
+    postService.getAll()
+    .then(posts => setPosts(posts))
   }, [])
 
   return (
-    <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.length ? 
-        <>
-          {profiles.map(profile=>
-            <p key={profile._id}>{profile.name}</p>
-          )}
-        </>
-      :
-        <p>No profiles yet</p>
-      }
-    </>
+    <div>
+      <h1>Welcome to Viaggio</h1>
+      <div>
+      {<PostList posts={posts}/>}
+      </div> 
+    </div>
   )
 }
- 
+
 export default Profiles
