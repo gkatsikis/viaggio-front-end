@@ -5,6 +5,15 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
+
+  <div class="navbar">
+  <Link to="/"><i class="fa-solid fa-house"></i></Link>
+
+  <Link to="/login"><i class="fa-solid fa-user"></i></Link>
+  <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
+  <Link to="" onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i></Link>
+  <Link className="nav-link" to="/createBucketList"><i class="fa-solid fa-list"></i></Link>
+  </div>
         // <nav>
         //   <ul>
         //     <li>Welcome, {user.name}</li>
@@ -15,32 +24,33 @@ const NavBar = ({ user, handleLogout }) => {
         //   </ul>
         // </nav>
 
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
-      <li className="nav-item active">
-      <Link className="nav-link" to="/profiles">Profiles</Link>
-      </li>
-      
-      <li className="nav-item">
-      <Link className="nav-link" to="" onClick={handleLogout}>Log Out</Link>
-      </li>
 
-      <li className="nav-item">
-        <Link className="nav-link" to="/changePassword">Change Password</Link>
-      </li>
-      <li className="nav-item">
-      <Link className="nav-link" to="/addpost">Add post</Link>
-      </li>
-      <li className="nav-item">
-      <Link className="nav-link" to="/createBucketList">Create Bucket List</Link>
-      </li>
-    </ul>
-  </div>
-</nav>
+// <nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
+//   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+//     <span className="navbar-toggler-icon"></span>
+//   </button>
+//   <div className="collapse navbar-collapse" id="navbarNav">
+//     <ul className="navbar-nav">
+//       <li className="nav-item active">
+//       <Link className="nav-link" to="/profiles">Profiles</Link>
+//       </li>
+      
+//       <li className="nav-item">
+//       <Link className="nav-link" to="" onClick={handleLogout}>Log Out</Link>
+//       </li>
+
+//       <li className="nav-item">
+//         <Link className="nav-link" to="/changePassword">Change Password</Link>
+//       </li>
+//       <li className="nav-item">
+//       <Link className="nav-link" to="/addpost">Add post</Link>
+//       </li>
+//       <li className="nav-item">
+//       <Link className="nav-link" to="/createBucketList"><i class="fa-solid fa-list"></i></Link>
+//       </li>
+//     </ul>
+//   </div>
+// </nav>
       :
         <nav>
           <ul>
@@ -48,8 +58,14 @@ const NavBar = ({ user, handleLogout }) => {
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
         </nav>
+
+        
       }
+      
+      
+      
     </>
+      
   )
 }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../src/App.css'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
