@@ -25,7 +25,15 @@ const ListItemForm = (props) => {
     listItemFormData.append('todo', formData.todo)
     listItemFormData.append('fulfilled', formData.fulfilled)
     props.handleCreateItem(listItemFormData)
+    setFormData({
+      location: '',
+      season: '',
+      todo: '',
+      fulfilled: false,
+    })
   }
+
+  
 
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)

@@ -89,6 +89,8 @@ const App = () => {
 		navigate('/')
   }
 
+  
+
 
   return (
     <>
@@ -115,7 +117,7 @@ const App = () => {
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
         <Route path="/createBucketList" element={<BucketList />}/>
-        <Route path="/listItem/:id" element={<ListItemDetails user={user} handleDeleteListItem={handleDeleteListItem}/>}/>
+        <Route path="/listItem/:id" element={<ListItemDetails user={user} handleDeleteListItem={handleDeleteListItem}  />}/>
       </Routes>
     </>
   )

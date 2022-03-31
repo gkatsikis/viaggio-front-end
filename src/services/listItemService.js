@@ -40,7 +40,7 @@ function getListItemById(listItemId) {
 //   }
 // }
 
-async function update(listItem){
+async function updateListItem(listItem){
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
@@ -66,6 +66,6 @@ export {
   create,
   getAll,
   getListItemById,
-  update,
+  updateListItem,
   deleteListItem,
 }

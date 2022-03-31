@@ -11,7 +11,7 @@ const BucketList = () => {
 const handleCreateItem = async(data) => {
   const newListItem = await listItemService.create(data)
   setListItems([...listItems, newListItem])
-  navigate('/createBucketList') //need to make this a blank form after submitting
+  navigate('/createBucketList') 
 }
 
 useEffect(() => {
@@ -24,7 +24,7 @@ useEffect(() => {
   return (  
     <>
       <h1>Bucket List</h1>
-      <ListItemForm handleCreateItem={handleCreateItem}/>
+      <ListItemForm handleCreateItem={handleCreateItem} />
       <h3>Your Bucket List Items Here:</h3>
       <div>
         {listItems.map (listItem =>
