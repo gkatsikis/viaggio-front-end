@@ -1,6 +1,6 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/posts`
-// REACT_APP_BACKEND_SERVER_URL=http://localhost:3001
+
 function create(post) {
   return fetch(BASE_URL, {
     method: 'POST',
@@ -12,10 +12,17 @@ function create(post) {
   .then(res => res.json())
 }
 
-function getAll() {
-  return fetch(BASE_URL)
-  .then(res => res.json())
+// function getAll() {
+//   return fetch(BASE_URL)
+//   .then(res => res.json())
+// }
+
+const getAll = async () => {
+  const res = await fetch(BASE_URL)
+  const data = await res.json()
+  return data
 }
+
 
 const getPostById = async (postId) => {
   try {
@@ -26,17 +33,25 @@ const getPostById = async (postId) => {
     throw error
   }
 }
+      
+// function getPostById(postId) {
+//   return fetch(`${BASE_URL}/${postId}`)
+//   .then(res => res.json())
+//   .catch(err => {
+//     console.log(err)
+//   })
+// }
 
-async function update(post){
+const update = async (post) => {
   const res = await fetch(`${BASE_URL}/${post._id}`, {
-    method: 'PUT',
-    headers: {'content-type': 'application/json'},
-    body: JSON.stringify(post)
-  })
-  const data = await res.json()
-  console.log(data)
-  return data
-}
+      method: 'PUT',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(post)
+    })
+    const data = await res.json()
+    console.log(data)
+    return data
+  }
 
 const deletePost = async (postId) => {
   try {
@@ -66,9 +81,13 @@ const createComment = async (postId, comment) => {
   }
 }
 
+// function updateComment(postId, commentId) {
+//   return fetch(`${BASE_URL/${postId}}`)
+// }
+
 const updateComment = async (postId, commentId) => {
   try {
-    const res = await fetch(`${BASE_URL}${postId}/comments/${commentId}`, {
+    const res = await fetch(`${BASE_URL}/${postId}/comments/${commentId}`, {
       method: "PUT",
       headers: {
         'content-type': 'application/json',
