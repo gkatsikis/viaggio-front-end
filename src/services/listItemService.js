@@ -27,24 +27,19 @@ const getAll = async () => {
   return data
 }
 
-function getListItemById(listItemId) {
-  return fetch(`${BASE_URL}/${listItemId}`, {
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-  })
-  .then(res => res.json())
+const getListItemById = async (listItemId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${listItemId}`, {
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error){
+    throw error
+  }
 }
-
-// const getListItemById = async (listItemId) => {
-//   try {
-//     const res = await fetch(`${BASE_URL}/${listItemId}`)
-//     const data = await res.json()
-//     return data
-//   } catch (error){
-//     throw error
-//   }
-// }
 
 const updateListItem = async (listItem) => {
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {
