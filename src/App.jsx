@@ -89,9 +89,6 @@ const App = () => {
 		navigate('/')
   }
 
-  
-
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -108,8 +105,8 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" posts={posts}/>}
+          path="/profile/:id"
+          element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
           path="/changePassword"

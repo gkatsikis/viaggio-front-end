@@ -33,8 +33,6 @@ const ListItemForm = (props) => {
     })
   }
 
-  
-
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [formData])
