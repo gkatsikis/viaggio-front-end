@@ -12,26 +12,20 @@ import PostList from './pages/PostList/PostList'
 import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
-<<<<<<< HEAD
 import Destination from './pages/Destination/Destination'
 import * as destService from './services/destService'
 
-=======
 import BucketList from './pages/BucketList/BucketList'
 import * as listItemService from './services/listItemService'
 import ListItemDetails from './pages/ListItem/ListItemDetails'
->>>>>>> main
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
-<<<<<<< HEAD
   const [locations, setLocations] = useState([])
-=======
   const [listItem, setListItem] = useState([])
->>>>>>> main
 
   const handleLogout = () => {
     authService.logout()
@@ -78,8 +72,6 @@ const App = () => {
     }
   }
 
-<<<<<<< HEAD
-=======
   const handleDeleteListItem = async (listItemId) => {
     try {
       await listItemService.deleteListItem(listItemId)
@@ -90,7 +82,6 @@ const App = () => {
     navigate('/createBucketList')
   }
 
->>>>>>> main
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
