@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
-import * as postService from '../../services/postService'
 import PostList from '../PostList/PostList'
 import PostCard from '../../components/PostCard/PostCard'
 
@@ -14,6 +13,7 @@ const Profiles = (props) => {
     profileService.getProfileById(params.id)
     .then(profile => setProfile(profile))
   }, [params.id])
+
 
   return (
     <div>
