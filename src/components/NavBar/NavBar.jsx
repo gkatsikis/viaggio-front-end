@@ -6,13 +6,19 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       {user ?
 
+<<<<<<< HEAD
   <div class="navbar" >
   <Link to="/"><i class="fa-solid fa-house"></i></Link>
+=======
+  <div className="navbar">
+  <Link to="/"><i className="fa-solid fa-house"></i></Link>
+>>>>>>> main
 
-  <Link to="/login"><i class="fa-solid fa-user"></i></Link>
-  <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
-  <Link to="" onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i></Link>
-  <Link className="nav-link" to="/createBucketList"><i class="fa-solid fa-list"></i></Link>
+  <Link to="/login"><i className="fa-solid fa-user"></i></Link>
+  <Link to="/login"><i className="fa-solid fa-plus"></i></Link>
+  <Link to="" onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>
+  <Link className="nav-link" to="/createBucketList"><i className="fa-solid fa-list"></i></Link>
+  
   </div>
         // <nav>
         //   <ul>
@@ -24,6 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
         //   </ul>
         // </nav>
 
+<<<<<<< HEAD
 
 //       <li className="nav-item">
 //         <Link className="nav-link" to="/changePassword">Change Password</Link>
@@ -37,6 +44,8 @@ const NavBar = ({ user, handleLogout }) => {
 //     </ul>
 //   </div>
 // </nav>
+=======
+>>>>>>> main
 // <nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
 //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 //     <span className="navbar-toggler-icon"></span>

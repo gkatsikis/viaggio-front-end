@@ -46,10 +46,36 @@ const SignupForm = props => {
       onSubmit={handleSubmit}
       className={styles.container}
     >
+<<<<<<< HEAD
       
     <div className="email-login">
     <label htmlFor="email" className={styles.label}>Email</label>
         <input
+=======
+      <div className="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+					<label htmlFor="name" className={styles.label}>Name</label>
+					<input
+          type="text"
+          autoComplete="off"
+          id="name"
+          value={name}
+          name="name"
+          onChange={handleChange}
+        />
+        <label htmlFor="bio" className={styles.label}>Bio</label>
+					<input
+          type="text"
+          autoComplete="off"
+          id="bio"
+          value={bio}
+          name="bio"
+          onChange={handleChange}
+        />
+        <label htmlFor="name" className={styles.label}>Email</label>
+					<input
+>>>>>>> main
           type="text"
           autoComplete="off"
           id="email"
