@@ -52,14 +52,12 @@ const NavBar = ({ user, handleLogout }) => {
 
         
       }
-      <div className='mobile-nav-wrap'>
-      <nav className='mobile'>
-      <ul className='mobile-nav-list'>
-            <div><li><Link to="/"><i class="fa-solid fa-house"></i></Link></li></div>
-            <div><li><Link to="/addPost"><i class="fa-solid fa-plus"></i></Link></li></div>
-            <div><li><Link to="/login"><i class="fa-solid fa-user"></i></Link></li></div>
-          </ul>
-      </nav>
+      
+      <div class="navbar">
+      <Link to="/"><i class="fa-solid fa-house"></i></Link>
+      
+      <Link to="/login"><i class="fa-solid fa-user"></i></Link>
+      <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
       </div>
     </>
   )

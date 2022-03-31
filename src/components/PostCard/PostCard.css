@@ -8,7 +8,7 @@ body{
 }
 
 .card{
-  margin:15px;
+  margin-bottom: 10px;
 }
 
 
@@ -21,15 +21,13 @@ body{
 
   .main-container{
     margin: auto;
-    max-width: 350px;
+    max-width: 350px; 
+  }
+  .card{
     margin-bottom: 10px;
-    z-index: 100;
   }
 
-  .location{
-    margin: auto;
-  }
-
+  
   
 
 }

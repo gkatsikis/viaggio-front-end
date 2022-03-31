@@ -9,7 +9,6 @@ const PostCard = ({post}) => {
   
   <div className="main-container row row-cols-1 row-cols-md-3 g-4">
     <div className="col">
-    
       <div className="card">
       <img 
           src={post.postPhoto ? post.postPhoto : `https://i.imgur.com/saIoSZF.jpeg`}

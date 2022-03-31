@@ -6,7 +6,7 @@ const PostList = (props) => {
   return (  
     <>
     
-    <div className={styles.container}>
+    <div className="full-container">
     {props.posts.map(post =>
           <PostCard key={post._id} post={post}/>
     
