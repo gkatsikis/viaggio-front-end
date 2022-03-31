@@ -48,7 +48,7 @@ const SignupForm = props => {
       onSubmit={handleSubmit}
       className={styles.container}
     >
-      <div class="container">
+      <div className="container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
 					<label htmlFor="name" className={styles.label}>Name</label>

@@ -6,13 +6,13 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       {user ?
 
-  <div class="navbar">
-  <Link to="/"><i class="fa-solid fa-house"></i></Link>
+  <div className="navbar">
+  <Link to="/"><i className="fa-solid fa-house"></i></Link>
 
-  <Link to="/login"><i class="fa-solid fa-user"></i></Link>
-  <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
-  <Link to="" onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i></Link>
-  <Link className="nav-link" to="/createBucketList"><i class="fa-solid fa-list"></i></Link>
+  <Link to="/login"><i className="fa-solid fa-user"></i></Link>
+  <Link to="/login"><i className="fa-solid fa-plus"></i></Link>
+  <Link to="" onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>
+  <Link className="nav-link" to="/createBucketList"><i className="fa-solid fa-list"></i></Link>
   
   </div>
         // <nav>
