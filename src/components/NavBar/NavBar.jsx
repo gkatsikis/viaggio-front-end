@@ -25,6 +25,20 @@ const NavBar = ({ user, handleLogout }) => {
         // </nav>
 
 
+<<<<<<< HEAD
+      <li className="nav-item">
+        <Link className="nav-link" to="/changePassword">Change Password</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/addpost">add post</Link>
+      </li>
+      <li>
+        <Link className="destination" to="/destination">destination</Link>
+      </li>
+    </ul>
+  </div>
+</nav>
+=======
 // <nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
 //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 //     <span className="navbar-toggler-icon"></span>
@@ -51,6 +65,7 @@ const NavBar = ({ user, handleLogout }) => {
 //     </ul>
 //   </div>
 // </nav>
+>>>>>>> main
       :
         <nav>
           <ul>

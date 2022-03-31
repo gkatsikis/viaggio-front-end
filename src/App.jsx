@@ -12,16 +12,26 @@ import PostList from './pages/PostList/PostList'
 import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
+<<<<<<< HEAD
+import Destination from './pages/Destination/Destination'
+import * as destService from './services/destService'
+
+=======
 import BucketList from './pages/BucketList/BucketList'
 import * as listItemService from './services/listItemService'
 import ListItemDetails from './pages/ListItem/ListItemDetails'
+>>>>>>> main
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+<<<<<<< HEAD
+  const [locations, setLocations] = useState([])
+=======
   const [listItem, setListItem] = useState([])
+>>>>>>> main
 
   const handleLogout = () => {
     authService.logout()
@@ -40,6 +50,12 @@ const App = () => {
   //   .then(newPost => setPosts([...posts, newPost]))
   //   navigate('/')
   // }
+  const handleAddDestination = async(data) => {
+    const newLocation = await destService.create(data)
+    console.log('this is newLocation!!!', newLocation)
+    setLocations([...locations, newLocation])
+    navigate('/destination')
+  }
 
   const handleAddPost = async(data) => {
     console.log('NEW POST DATA', data)
@@ -62,6 +78,8 @@ const App = () => {
     }
   }
 
+<<<<<<< HEAD
+=======
   const handleDeleteListItem = async (listItemId) => {
     try {
       await listItemService.deleteListItem(listItemId)
@@ -72,6 +90,7 @@ const App = () => {
     navigate('/createBucketList')
   }
 
+>>>>>>> main
   useEffect(() => {
     postService.getAll()
     .then(allPosts => {
@@ -96,6 +115,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<PostList posts={posts} />}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
+        <Route path="/destination" element={<Destination handleAddDestination={handleAddDestination} />} />
         <Route path="/post/:id" element={<PostDetails user={user} handleDeletePost={handleDeletePost} />}/>
         <Route
           path="/signup"
