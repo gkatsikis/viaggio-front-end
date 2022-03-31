@@ -6,7 +6,7 @@ const DestinationForm = (props) => {
   const [formData, setFormData] = useState({
     destName: '',
     location: '',
-    category: '',
+    category: 'beach',
   })
 
   const [validForm, setValidForm] = useState(false)
@@ -23,6 +23,10 @@ const DestinationForm = (props) => {
     postFormData.append('location', formData.location)
     postFormData.append('category', formData.category)
     props.handleAddDestination(postFormData)
+    setFormData({
+      destName: '',
+      location: '',
+    })
   }
 
   useEffect(() => {
@@ -46,7 +50,6 @@ const DestinationForm = (props) => {
           type="text"
           className="dest-form"
           name="destName"
-          value={formData.destName}
           onChange={handleChange}
           required
           />
@@ -60,7 +63,6 @@ const DestinationForm = (props) => {
           type="text"
           className="dest-form"
           name="location"
-          value={formData.location}
           onChange={handleChange}
           required
           />
@@ -71,8 +73,7 @@ const DestinationForm = (props) => {
           className="dest-input">
           </label>
           <select 
-          name="category" 
-          value={formData.category} 
+          name="category"
           onChange={handleChange}>
             <option value="beach">Beach</option>
             <option value="park">Park or Trail</option>

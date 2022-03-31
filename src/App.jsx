@@ -40,7 +40,6 @@ const App = () => {
   //   navigate('/')
   // }
   const handleAddDestination = async(data) => {
-    console.log('NEW DESTINATION DATAAAAAAAAAAAAA', data)
     const newLocation = await destService.create(data)
     console.log('this is newLocation!!!', newLocation)
     setLocations([...locations, newLocation])

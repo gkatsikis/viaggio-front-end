@@ -12,6 +12,12 @@ function create(location) {
   .then(res => res.json())
 }
 
+function getAll() {
+  return fetch(BASE_URL)
+  .then(res => res.json())
+}
+
 export {
   create,
+  getAll,
 }
