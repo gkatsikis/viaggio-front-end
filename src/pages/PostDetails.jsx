@@ -1,3 +1,4 @@
+import styles from './PostDetails.css'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import * as postService from '../services/postService'
@@ -45,7 +46,20 @@ const PostDetails = (props) => {
 
   return (
     <div className="layout">
+      
       <div className="post-details">
+      <div className='edit-delete'><div><Link
+          
+          to='/edit'
+          state={{post}}
+        ><button className='btn btn-sm btn-warning'>edit </button></Link>
+        </div>
+        <div>
+      <button className="btn btn-danger"
+        onClick={() => props.handleDeletePost(post._id)}
+      >Delete</button>
+      </div>
+      </div>
         {post && <PostCard post={post} />}
         <PostActions {...props}/>
         <CommentSection     
@@ -54,18 +68,10 @@ const PostDetails = (props) => {
           comments={comments}
           setComments={setComments}
         />
-        <Link
-          className='btn btn-sm btn-warning'
-          to='/edit'
-          state={{post}}
-        >Edit</Link>
+        
       </div>
 
-      <div>
-      <button
-        onClick={() => props.handleDeletePost(post._id)}
-      >Delete Post</button>
-      </div>
+      
 
     </div>
 
@@ -73,3 +79,5 @@ const PostDetails = (props) => {
 }
 
 export default PostDetails;
+
+

@@ -5,8 +5,9 @@ const CommentCard = (props) => {
   
   return (
     <div className='comment-card'>
-      <CommentActions {...props} />
-      {props.comment.content} 
+      
+      <div>{props.comment.content} </div>
+      <div><CommentActions {...props} /> </div>
     </div>
     
   )
