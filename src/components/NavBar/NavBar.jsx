@@ -6,16 +6,11 @@ const NavBar = ({ user, handleLogout }) => {
     <>
       {user ?
 
-<<<<<<< HEAD
-  <div class="navbar" >
-  <Link to="/"><i class="fa-solid fa-house"></i></Link>
-=======
   <div className="navbar">
   <Link to="/"><i className="fa-solid fa-house"></i></Link>
->>>>>>> main
 
   <Link to="/login"><i className="fa-solid fa-user"></i></Link>
-  <Link to="/login"><i className="fa-solid fa-plus"></i></Link>
+  <Link to="/addPost"><i className="fa-solid fa-plus"></i></Link>
   <Link to="" onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>
   <Link className="nav-link" to="/createBucketList"><i className="fa-solid fa-list"></i></Link>
   
@@ -30,22 +25,6 @@ const NavBar = ({ user, handleLogout }) => {
         //   </ul>
         // </nav>
 
-<<<<<<< HEAD
-
-//       <li className="nav-item">
-//         <Link className="nav-link" to="/changePassword">Change Password</Link>
-//       </li>
-//       <li className="nav-item">
-//       <Link className="nav-link" to="/addpost">add post</Link>
-//       </li>
-//       <li>
-//         <Link className="destination" to="/destination">destination</Link>
-//       </li>
-//     </ul>
-//   </div>
-// </nav>
-=======
->>>>>>> main
 // <nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
 //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 //     <span className="navbar-toggler-icon"></span>

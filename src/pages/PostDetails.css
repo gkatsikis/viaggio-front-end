@@ -1,0 +1,12 @@
+.edit-delete{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-top: 20px;
+  margin-bottom: -40px;
+  margin-right: 20px;
+}
+
+.btn{
+  height: 50px;
+}
