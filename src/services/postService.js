@@ -17,15 +17,20 @@ function getAll() {
   .then(res => res.json())
 }
 
-const getPostById = async (postId) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${postId}`)
-    const data = await res.json()
-    return data
-  } catch (error) {
-    throw error
-  }
+function getPostById(postId) {
+  return fetch(`${BASE_URL}/${postId}`)
+  .then(res => res.json())
 }
+
+// const getPostById = async (postId) => {
+//   try {
+//     const res = await fetch(`${BASE_URL}/${postId}`)
+//     const data = await res.json()
+//     return data
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 async function update(post){
   const res = await fetch(`${BASE_URL}/${post._id}`, {
