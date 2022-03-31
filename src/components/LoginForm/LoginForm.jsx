@@ -50,8 +50,8 @@ const LoginForm = props => {
           type="password"
           autoComplete="off"
           id="password"
-          value={formData.pw}
-          name="pw"
+          value={formData.password}
+          name="password"
           onChange={handleChange}
         />
       </div>

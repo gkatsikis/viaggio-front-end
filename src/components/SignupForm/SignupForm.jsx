@@ -40,37 +40,16 @@ const SignupForm = props => {
 
   return (
     
-    
-    
-				<form
-        
+    <div className="card">
+  <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
     >
-      <div class="container">
-          <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
-					<label htmlFor="name" className={styles.label}>Name</label>
-					<input
-          type="text"
-          autoComplete="off"
-          id="name"
-          value={name}
-          name="name"
-          onChange={handleChange}
-        />
-        <label htmlFor="bio" className={styles.label}>Bio</label>
-					<input
-          type="text"
-          autoComplete="off"
-          id="bio"
-          value={bio}
-          name="bio"
-          onChange={handleChange}
-        />
-        <label htmlFor="name" className={styles.label}>Email</label>
-					<input
+      
+    <div className="email-login">
+    <label htmlFor="email" className={styles.label}>Email</label>
+        <input
           type="text"
           autoComplete="off"
           id="email"
@@ -78,8 +57,17 @@ const SignupForm = props => {
           name="email"
           onChange={handleChange}
         />
-        <label htmlFor="name" className={styles.label}>Password</label>
-					<input
+        <label htmlFor="name" className={styles.label}>Name</label>
+        <input
+          type="text"
+          autoComplete="off"
+          id="name"
+          value={name}
+          name="name"
+          onChange={handleChange}
+        />
+        <label htmlFor="password" className={styles.label}>Password</label>
+        <input
           type="password"
           autoComplete="off"
           id="password"
@@ -87,14 +75,12 @@ const SignupForm = props => {
           name="password"
           onChange={handleChange}
         />
-					<button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-			</div>
-				</form>
+      </div>
+      <button className="cta-btn" disabled={isFormInvalid}>Log In</button>
+      Dont have an account?
+      <Link to='/signup'>Sign up</Link>
+  </form>
+  </div>
     
   )
 }
