@@ -20,7 +20,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
-  const [listItems, setListItems] = useState([])
+  const [listItem, setListItem] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -59,6 +59,16 @@ const App = () => {
     } catch (error) {
       throw error
     }
+  }
+
+  const handleDeleteListItem = async (listItemId) => {
+    try {
+      await listItemService.deleteListItem(listItemId)
+      setListItem()
+    } catch (error) {
+      throw error
+    }
+    navigate('/createBucketList')
   }
 
   useEffect(() => {
@@ -105,7 +115,7 @@ const App = () => {
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
         <Route path="/createBucketList" element={<BucketList />}/>
-        <Route path="/listItem/:id" element={<ListItemDetails user={user}/>}/>
+        <Route path="/listItem/:id" element={<ListItemDetails user={user} handleDeleteListItem={handleDeleteListItem}/>}/>
       </Routes>
     </>
   )

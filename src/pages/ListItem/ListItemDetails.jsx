@@ -20,15 +20,23 @@ const ListItemDetails = (props) => {
     fetchListItem()
   }, [id])
 
+  
+
   return (  
     <div>
-      <h3>Here are your list details</h3>
+      <h3>Here are your list item details:</h3>
       <div>
         <p>Location: {listItem.location}</p>
         <p>Season: {listItem.season}</p>
         <p>To Do: {listItem.todo}</p>
         <p>Done: {listItem.fulfilled === true ? 'Done' : 'Not Done'}</p>
       </div>
+      <a href="/createBucketList"> Go Back To Bucket List</a>
+      <button
+        onClick={() => props.handleDeleteListItem(listItem._id)}
+      >
+        Delete List Item
+      </button>
     </div>
   );
 }
