@@ -20,8 +20,6 @@ const ListItemDetails = (props) => {
     fetchListItem()
   }, [id])
 
-  
-
   return (  
     <div>
       <h3>Here are your list item details:</h3>

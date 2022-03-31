@@ -36,13 +36,6 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-
-  // const handleAddPost = newPostData => {
-  //   console.log('NEW POST DATA', newPostData)
-  //   postService.create(newPostData)
-  //   .then(newPost => setPosts([...posts, newPost]))
-  //   navigate('/')
-  // }
   const handleAddDestination = async(data) => {
     const newLocation = await destService.create(data)
     console.log('this is newLocation!!!', newLocation)
@@ -87,8 +80,6 @@ const App = () => {
       setPosts(allPosts)
     }) 
   }, [])
-
- 
 
   const handleUpdate = updatedPostData => {
     

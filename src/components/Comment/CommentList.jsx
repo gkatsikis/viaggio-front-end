@@ -4,7 +4,6 @@ import CommentCard from "./CommentCard";
 const CommentList = (props) => {
   return (
     
-      
     props.comments?.map((comment) => (
       <CommentCard 
       {...props}
@@ -12,9 +11,7 @@ const CommentList = (props) => {
       comment={comment}
       />
       
-      
     ))
-      
   );
 }
 

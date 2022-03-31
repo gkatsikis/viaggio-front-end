@@ -41,8 +41,6 @@ const PostDetails = (props) => {
     fetchPost()
   }, [post])
 
-
-
   return (
     <div className="layout">
       <div className="post-details">

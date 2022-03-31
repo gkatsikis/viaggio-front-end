@@ -30,16 +30,6 @@ function getListItemById(listItemId) {
   .then(res => res.json())
 }
 
-// const getListItemById = async (listItemId) => {
-//   try {
-//     const res = await fetch(`${BASE_URL}/${listItemId}`)
-//     const data = await res.json()
-//     return data
-//   } catch (error){
-//     throw error
-//   }
-// }
-
 async function updateListItem(listItem){
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {
     method: 'PUT',
@@ -47,7 +37,6 @@ async function updateListItem(listItem){
     body: JSON.stringify(listItem)
   })
   const data = await res.json()
-  console.log(data)
   return data
 }
 

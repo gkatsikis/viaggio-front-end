@@ -14,18 +14,15 @@ const Profiles = (props) => {
     .then(profile => setProfile(profile))
   }, [params.id])
 
-
   return (
     <div>
       <h1>Welcome to Your Viaggio Profile</h1>
       <div>
         {profile._id ? 
-        <>
-        
+        <>    
         {profile.name}
         {profile.posts.map(post =>
-          <PostCard key={post._id} post={post}/>
-    
+          <PostCard key={post._id} post={post}/>  
         )}
         </>
         :

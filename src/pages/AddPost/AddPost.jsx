@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { create } from '../../services/postService';
 
-
-
 const AddPost = (props) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -24,7 +22,6 @@ const AddPost = (props) => {
     postFormData.append('title', formData.title)
     postFormData.append('story', formData.story)
     props.handleAddPost(postFormData)
-    // create(formData)
   }
 
   useEffect(() => {
@@ -55,7 +52,7 @@ const AddPost = (props) => {
       value={formData.title}
       required
       onChange={handleChange}
-       />
+      />
     </div>
     <div> Story:
       <label 
@@ -69,7 +66,7 @@ const AddPost = (props) => {
       value={formData.story}
       required
       onChange={handleChange}
-       />
+      />
     </div>
     <div>
       <label 
@@ -83,7 +80,7 @@ const AddPost = (props) => {
       
       name="postPhoto"
       onChange={handleChangePhoto}
-       />
+      />
     </div>
     <button 
     type="submit"
@@ -93,7 +90,7 @@ const AddPost = (props) => {
       Add Your Story</button>
     </form>
     </> 
-   );
+  );
 }
- 
+
 export default AddPost;
