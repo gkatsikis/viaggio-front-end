@@ -4,6 +4,11 @@
 <img width="100" src="public/Viaggio.png")
 </p>
 
+<Details>
+ <summary>Table of Contents</summary>
+[Description](# Viaggio) 
+</Details>
+
 ## Viaggio ✈️
 
 Viaggio is a travel inspiration app designed to fuel your travel exploration dreams and make them a reality. Recognizing there were no apps dedicated specifically to the dream stage of travel, we set out to solve this problem. 
