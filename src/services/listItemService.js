@@ -1,36 +1,48 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/listItems`
 
-function create(listItem) {
-  return fetch(BASE_URL, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: listItem
-  })
-  .then(res => res.json())
+const create = async (listItem) => {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: listItem
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
 }
 
-function getAll() {
-  return fetch(BASE_URL, {
+const getAll = async () => {
+  const res = await fetch(BASE_URL, {
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`
     },
   })
-  .then(res => res.json())
+  const data = await res.json()
+  return data
 }
 
-function getListItemById(listItemId) {
-  return fetch(`${BASE_URL}/${listItemId}`, {
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-  })
-  .then(res => res.json())
+const getListItemById = async (listItemId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${listItemId}`, {
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+    })
+    const data = await res.json()
+    return data
+  } catch (error){
+    throw error
+  }
 }
 
 async function updateListItem(listItem){
+const updateListItem = async (listItem) => {
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
@@ -38,6 +50,7 @@ async function updateListItem(listItem){
   })
   const data = await res.json()
   return data
+  }
 }
 
 const deleteListItem = async (listItemId) => {
