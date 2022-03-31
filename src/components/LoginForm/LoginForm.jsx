@@ -28,7 +28,7 @@ const LoginForm = props => {
 
   return (
     <div className="card">
-   <form
+  <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
