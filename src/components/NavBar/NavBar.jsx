@@ -58,8 +58,10 @@ const NavBar = ({ user, handleLogout }) => {
       
       <Link to="/login"><i class="fa-solid fa-user"></i></Link>
       <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
+      <Link className="nav-link" to="" onClick={handleLogout}>Log Out</Link>
       </div>
     </>
+      
   )
 }
 
