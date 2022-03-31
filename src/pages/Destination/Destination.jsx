@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import DestinationForm from '../../components/DestinationForm/DestinationForm';
-import DestintaionList from '../../components/DestinationList/DestinationList';
+import DestinationList from '../../components/DestinationList/DestinationList';
 import * as destService from '../../services/destService'
 
 
@@ -20,9 +20,9 @@ useEffect(() => {
       <h1>Where have you always wanted to go?</h1>
       <DestinationForm handleAddDestination={props.handleAddDestination}/>
       <hr />
-      <DestintaionList key={locations._id} />
+      <DestinationList key={locations._id} />
     </>
    );
 }
- 
+
 export default Destination;

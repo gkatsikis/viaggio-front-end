@@ -6,7 +6,7 @@ const DestinationForm = (props) => {
   const [formData, setFormData] = useState({
     destName: '',
     location: '',
-    category: 'beach',
+    category: 'Beach',
   })
 
   const [validForm, setValidForm] = useState(false)
@@ -52,6 +52,7 @@ const DestinationForm = (props) => {
           name="destName"
           onChange={handleChange}
           required
+          placeholder='e.g. Santa Monica Beach'
           />
          </div>
          <div> Where is your destination located?
@@ -65,6 +66,7 @@ const DestinationForm = (props) => {
           name="location"
           onChange={handleChange}
           required
+          placeholder='e.g. California, USA'
           />
          </div>
          <div> How would you categorize this destination?
@@ -75,9 +77,9 @@ const DestinationForm = (props) => {
           <select 
           name="category"
           onChange={handleChange}>
-            <option value="beach">Beach</option>
-            <option value="park">Park or Trail</option>
-            <option value="art">Art Venue</option>
+            <option value="Beach">Beach</option>
+            <option value="Park/Trail">Park or Trail</option>
+            <option value="Art Venue">Art Venue</option>
           </select>
          </div>
          <button
