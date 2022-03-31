@@ -1,6 +1,6 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/posts`
-// REACT_APP_BACKEND_SERVER_URL=http://localhost:3001
+
 function create(post) {
   return fetch(BASE_URL, {
     method: 'POST',
@@ -12,9 +12,15 @@ function create(post) {
   .then(res => res.json())
 }
 
-function getAll() {
-  return fetch(BASE_URL)
-  .then(res => res.json())
+// function getAll() {
+//   return fetch(BASE_URL)
+//   .then(res => res.json())
+// }
+
+const getAll = async () => {
+  const res = await fetch(BASE_URL)
+  const data = await res.json()
+  return data
 }
 
 
@@ -35,36 +41,17 @@ const getPostById = async (postId) => {
 //     console.log(err)
 //   })
 // }
-      async function update(post){
-          const res = await fetch(`${BASE_URL}/${post._id}`, {
-              method: 'PUT',
-              headers: {'content-type': 'application/json'},
-              body: JSON.stringify(post)
-            })
-            const data = await res.json()
-            console.log(data)
-            return data
-          }
-          
 
-// function update(post) {
-//   return fetch(`${BASE_URL}/${post._id}`, {
-//     method: 'PUT',
-//     headers: {'content-type': 'application/json'},
-//     body: JSON.stringify(post)
-//   })
-//   .then(res => res.json())
-// }
-
-// function deletePost(postId) {
-//   return fetch(`${BASE_URL}/${postId}`, {
-//     method: 'DELETE',
-//     headers: { 'Authorization': 'Bearer ' + tokenService.getToken() }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//   })
-// }
+const update = async (post) => {
+  const res = await fetch(`${BASE_URL}/${post._id}`, {
+      method: 'PUT',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(post)
+    })
+    const data = await res.json()
+    console.log(data)
+    return data
+  }
 
 const deletePost = async (postId) => {
   try {
@@ -76,20 +63,6 @@ const deletePost = async (postId) => {
     throw error
   }
 }
-
-// function createComment(postId, comment) {
-//   return fetch(`${BASE_URL}/${postId}/comments`, {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json',
-//       'Authorization': 'Bearer ' + tokenService.getToken()
-//     },
-//     body: JSON.stringify(comment)
-//   })
-//   .catch(err => {
-//     console.log(err)
-//   })
-// }
 
 const createComment = async (postId, comment) => {
   try{
