@@ -1,9 +1,20 @@
-const ListItem = ({props}) => {
-  return (  
+import { Link } from 'react-router-dom'
+
+const ListItem = ({listItem}) => {
+  return ( 
+    <>
     <div>
-      <h3>Your Bucket List Items Here: </h3>
+      <Link
+      className='list-item'
+      to={`/listItem/${listItem._id}`}
+      >
+      <div>
+        <p>{listItem.location}</p>
+      </div>
+      </Link>
     </div>
+    </>
   );
 }
- 
+
 export default ListItem;

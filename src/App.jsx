@@ -13,14 +13,15 @@ import EditPost from './pages/EditPost/EditPost'
 import * as postService from './services/postService'
 import PostDetails from './pages/PostDetails'
 import BucketList from './pages/BucketList/BucketList'
-import * as bucketlistService from './services/bucketlistService'
-
+import * as listItemService from './services/listItemService'
+import ListItemDetails from './pages/ListItem/ListItemDetails'
 
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+  const [listItem, setListItem] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -61,6 +62,15 @@ const App = () => {
     }
   }
 
+  const handleDeleteListItem = async (listItemId) => {
+    try {
+      await listItemService.deleteListItem(listItemId)
+      setListItem()
+    } catch (error) {
+      throw error
+    }
+    navigate('/createBucketList')
+  }
 
   useEffect(() => {
     postService.getAll()
@@ -68,6 +78,8 @@ const App = () => {
       setPosts(allPosts)
     }) 
   }, [])
+
+ 
 
   const handleUpdate = updatedPostData => {
     
@@ -77,7 +89,6 @@ const App = () => {
     setPosts(newPostArray)
 		navigate('/')
   }
-
 
   return (
     <>
@@ -95,7 +106,7 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path="/profile/:id"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
@@ -104,6 +115,7 @@ const App = () => {
         />
         <Route path='/edit' element={<EditPost handleUpdate={handleUpdate}/>}/>
         <Route path="/createBucketList" element={<BucketList />}/>
+        <Route path="/listItem/:id" element={<ListItemDetails user={user} handleDeleteListItem={handleDeleteListItem}  />}/>
       </Routes>
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { create } from '../../services/bucketlistService'
+import { create } from '../../services/listItemService'
 
-const CreateBucketListForm = (props) => {
+const ListItemForm = (props) => {
   const [formData, setFormData] = useState({
     location: '',
     season: '',
@@ -19,12 +19,18 @@ const CreateBucketListForm = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    const itemFormData = new FormData()
-    itemFormData.append('location', formData.location)
-    itemFormData.append('season', formData.season)
-    itemFormData.append('todo', formData.todo)
-    itemFormData.append('fulfilled', formData.fulfilled)
-    props.handleCreateItem(itemFormData)
+    const listItemFormData = new FormData()
+    listItemFormData.append('location', formData.location)
+    listItemFormData.append('season', formData.season)
+    listItemFormData.append('todo', formData.todo)
+    listItemFormData.append('fulfilled', formData.fulfilled)
+    props.handleCreateItem(listItemFormData)
+    setFormData({
+      location: '',
+      season: '',
+      todo: '',
+      fulfilled: false,
+    })
   }
 
   useEffect(() => {
@@ -102,4 +108,4 @@ const CreateBucketListForm = (props) => {
   );
 }
 
-export default CreateBucketListForm;
+export default ListItemForm;

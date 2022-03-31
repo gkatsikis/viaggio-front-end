@@ -2,7 +2,7 @@ import styles from './PostList.css'
 import PostCard from '../../components/PostCard/PostCard';
 
 const PostList = (props) => {
-  
+  console.log('Yellow', props.post)
   return (  
     <>
     
