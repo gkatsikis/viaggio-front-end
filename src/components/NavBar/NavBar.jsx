@@ -13,6 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
   <Link to="/login"><i class="fa-solid fa-plus"></i></Link>
   <Link to="" onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket"></i></Link>
   <Link className="nav-link" to="/createBucketList"><i class="fa-solid fa-list"></i></Link>
+  
   </div>
         // <nav>
         //   <ul>
@@ -24,21 +25,6 @@ const NavBar = ({ user, handleLogout }) => {
         //   </ul>
         // </nav>
 
-
-<<<<<<< HEAD
-      <li className="nav-item">
-        <Link className="nav-link" to="/changePassword">Change Password</Link>
-      </li>
-      <li className="nav-item">
-      <Link className="nav-link" to="/addpost">add post</Link>
-      </li>
-      <li>
-        <Link className="destination" to="/destination">destination</Link>
-      </li>
-    </ul>
-  </div>
-</nav>
-=======
 // <nav className="the-nav navbar navbar-expand-lg navbar-light bg-light">
 //   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 //     <span className="navbar-toggler-icon"></span>
@@ -65,7 +51,6 @@ const NavBar = ({ user, handleLogout }) => {
 //     </ul>
 //   </div>
 // </nav>
->>>>>>> main
       :
         <nav>
           <ul>
