@@ -27,13 +27,13 @@ const LoginForm = props => {
   }
 
   return (
-    <div class="card">
+    <div className="card">
    <form
       autoComplete="off"
       onSubmit={handleSubmit}
       className={styles.container}
     >
-    <div class="email-login">
+    <div className="email-login">
     <label htmlFor="email" className={styles.label}>Email</label>
         <input
           type="text"
@@ -53,7 +53,7 @@ const LoginForm = props => {
           onChange={handleChange}
         />
       </div>
-      <button class="cta-btn">Log In</button>
+      <button className="cta-btn">Log In</button>
       Dont
       <Link to='/signup'>Sign up</Link>
   </form>
