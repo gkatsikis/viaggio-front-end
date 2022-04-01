@@ -1,0 +1,10 @@
+
+
+@media screen and (max-width: 540px) {
+.dest-list {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+}
