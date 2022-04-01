@@ -26,7 +26,7 @@ useEffect(() => {
     <div className='full-container'>
       <h4>Bucket List</h4>
       <ListItemForm handleCreateItem={handleCreateItem} />
-      <h5>Your Bucket List Items Here:</h5>
+      <h6>Your Bucket List Items Here:</h6>
       <div>
         {listItems.map (listItem =>
           <ListItem key={listItem._id} listItem={listItem}/>

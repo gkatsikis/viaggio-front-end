@@ -17,7 +17,7 @@ const NavBar = ({ user, handleLogout }) => {
           <Link to={`/profile/${user.profile}`}><i className="fa-solid fa-user"></i></Link>
           <Link to="/addPost"><i className="fa-solid fa-plus"></i></Link>
           <Link className="nav-link" to="/createBucketList"><i className="fa-solid fa-list"></i></Link>
-          <Link to="/destination"><i className="fa-solid fa-plane"></i></Link>
+          {/* <Link to="/destination"><i className="fa-solid fa-plane"></i></Link> */}
 
           <Link to="" onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>
 

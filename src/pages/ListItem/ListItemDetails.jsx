@@ -1,3 +1,4 @@
+import styles from './listItem.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import * as listItemService from '../../services/listItemService'
@@ -21,8 +22,8 @@ const ListItemDetails = (props) => {
   }, [id])
 
   return (  
-    <div>
-      <h3>Here are your list item details:</h3>
+    <div className="container">
+      <div className='title'>Here are your list item details</div>
       <div>
         <p>Location: {listItem.location}</p>
         <p>Season: {listItem.season}</p>
@@ -30,7 +31,7 @@ const ListItemDetails = (props) => {
         <p>Done: {listItem.fulfilled === true ? 'Done' : 'Not Done'}</p>
       </div>
       <a href="/createBucketList"> Go Back To Bucket List</a>
-      <button
+      <button className='btn'
         onClick={() => props.handleDeleteListItem(listItem._id)}
       >
         Delete List Item

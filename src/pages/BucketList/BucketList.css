@@ -1,5 +1,8 @@
 @media screen and (max-width: 540px){
   .full-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 50px;
   }
 
