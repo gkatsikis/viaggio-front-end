@@ -17,7 +17,7 @@ const DestinationList = (props) => {
       <h2>Explore Destinations</h2>
       {locations.map((locationx) => 
         <div className="dest-list">
-          <h3>{locationx.destName}</h3>
+          <h4>{locationx.destName}</h4>
           <h4>{locationx.location}</h4>
           <h5>{locationx.category}</h5>
         </div>

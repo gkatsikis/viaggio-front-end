@@ -86,7 +86,7 @@ const DestinationForm = (props) => {
          </div>
          <button
          type="submit"
-         className="btn">Add a Destination</button>
+         className="btn btn-success btn-lg">Add</button>
       </form>
     </div>
    );
