@@ -1,0 +1,9 @@
+.full-container{
+  margin-top: 50px;
+  width: 275px;
+}
+
+#btn {
+  background-color: teal;
+  width: 50%;
+}

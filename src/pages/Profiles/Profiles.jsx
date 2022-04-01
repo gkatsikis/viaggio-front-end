@@ -15,8 +15,8 @@ const Profiles = (props) => {
   }, [params.id])
 
   return (
-    <div>
-      <h1>Welcome to Your Viaggio Profile</h1>
+    <div className="full-container">
+      <h4>Welcome to Your Viaggio Profile</h4>
       <div>
         {profile._id ? 
         <>    

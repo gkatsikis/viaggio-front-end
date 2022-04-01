@@ -1,5 +1,7 @@
+import styles from './AddPost.css'
 import { useState, useEffect, useRef } from 'react';
 import { create } from '../../services/postService';
+
 
 const AddPost = (props) => {
   const [formData, setFormData] = useState({
@@ -34,7 +36,8 @@ const AddPost = (props) => {
 
   return (
     <>
-    <h1>Add Post</h1>
+    <div className='full-container'>
+    <h5>Add Post</h5>
     <form autoComplete="off"
     ref={formElement}
     onSubmit={handleSubmit}
@@ -82,13 +85,14 @@ const AddPost = (props) => {
       onChange={handleChangePhoto}
       />
     </div>
-    <button 
+    <button id="btn"
     type="submit"
     className="btn"
     disabled={!validForm}
     >
       Add Your Story</button>
     </form>
+    </div>
     </> 
   );
 }

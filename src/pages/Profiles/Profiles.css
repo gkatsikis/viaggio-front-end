@@ -1,0 +1,10 @@
+.full-container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#btn {
+  background-color: teal;
+  width: 100%;
+}
