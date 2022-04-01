@@ -39,7 +39,7 @@ const ListItemForm = (props) => {
 
   return (  
     <>
-    <h3>Add to Bucket List</h3>
+    <h6>Add to Bucket List</h6>
     <form autoComplete="off"
     ref={formElement}
     onSubmit={handleSubmit}
@@ -95,7 +95,7 @@ const ListItemForm = (props) => {
         />
       </div>
 
-      <button
+      <button id='btn'
       type="submit"
       className="btn"
       disabled={!validForm}

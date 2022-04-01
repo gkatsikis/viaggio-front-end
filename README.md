@@ -6,7 +6,9 @@
 
 <Details>
  <summary>Table of Contents</summary>
-[Description](# Viaggio) 
+
+[Description](#Viaggio)<br>
+[Check out the app](#Check-out-the-app)
 </Details>
 
 ## Viaggio ✈️
