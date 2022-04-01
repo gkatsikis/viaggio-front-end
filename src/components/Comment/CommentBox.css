@@ -5,26 +5,36 @@ body{
 
 #commentbox{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 10px;
 }
 .comment{
+  display: flex;
+  justify-content: center;
   border-radius: 25px;
   border: none;
+  margin: auto;
+  padding: 10px;
 }
 
 #comment-submit{
   margin-top: -5px;
   margin-left: 5px;
   border: none;
-  background-color: rgb(3, 167, 167);
+  /* background-color: rgb(3, 167, 167); */
   color: white;
 }
 
 #comment-card{
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 300px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .comment-section{
@@ -35,7 +45,11 @@ body{
 }
 
 .comment-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 50px;
+
 }
 
 .all-com{
