@@ -29,6 +29,7 @@ body{
   border: none;
   /* background-color: rgb(3, 167, 167); */
   color: white;
+  
 }
 
 #comment-card{
@@ -52,6 +53,32 @@ body{
 
 }
 
+.single-com{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
 .all-com{
   margin-bottom: 25px;
+}
+
+.sub{
+  margin-left: 25%;
+  margin-top: 10px;
+  
+}
+
+.x{
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.x:hover{
+  background-color: black;
 }
