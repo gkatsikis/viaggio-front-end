@@ -30,7 +30,7 @@ const CreateComment = (props) => {
         onChange={(e) => setText(e.target.value)}
       >
       </input>
-      <button className="btn btn-success" id='comment-submit' type="submit">Submit</button>
+      <div className='sub'><button className="btn btn-success" id='comment-submit' type="submit">Submit</button></div>
     </form> 
     </div>
   )
