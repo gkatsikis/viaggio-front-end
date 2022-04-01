@@ -13,6 +13,8 @@ body{
 }
 
 #comment-submit{
+  margin-top: -5px;
+  margin-left: 5px;
   border: none;
   background-color: rgb(3, 167, 167);
   color: white;
@@ -26,6 +28,15 @@ body{
 
 .comment-section{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  margin-bottom: 50px;
+}
+
+.comment-list{
+  margin-bottom: 50px;
+}
+
+.all-com{
+  margin-bottom: 25px;
 }
