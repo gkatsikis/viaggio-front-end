@@ -4,9 +4,13 @@ import './NavBar.css'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
-      {user ?
-
+    
+      {/* {user ? */}
+  <div>
+    <Link to="/">
+  <div className='logo'><img src="./viaggio.png" alt="logo"/></div></Link>
   <div className="navbar">
+  
   <Link to="/"><i className="fa-solid fa-house"></i></Link>
 
   <Link to="/prolile/id"><i className="fa-solid fa-user"></i></Link>
@@ -16,19 +20,8 @@ const NavBar = ({ user, handleLogout }) => {
   <Link to="/destination"><i class="fa-solid fa-plane"></i></Link>
   
   </div>
-      :
-        <nav>
-          <ul>
-            <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
-          </ul>
-        </nav>
-
-        
-      }
-      
-      
-      
+  </div>
+  
     </>
       
   )
