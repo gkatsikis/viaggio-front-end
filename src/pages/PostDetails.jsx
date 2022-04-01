@@ -31,6 +31,7 @@ const PostDetails = (props) => {
   }, [id])
 
   useEffect(() => {
+    if(post) {
     const fetchPost = async () => {
       try {
         
@@ -40,6 +41,7 @@ const PostDetails = (props) => {
       }
     }
     fetchPost()
+  }
   }, [post])
 
 
