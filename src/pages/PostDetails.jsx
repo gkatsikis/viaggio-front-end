@@ -50,7 +50,7 @@ const PostDetails = (props) => {
           
           to='/edit'
           state={{post}}
-        ><div><button className='btn btn-sm btn-warning'>edit </button>
+        ><div><button className='btn edit btn-sm btn-warning'>edit </button>
         </div>
         </Link>
         <div>
