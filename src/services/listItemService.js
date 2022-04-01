@@ -41,6 +41,7 @@ const getListItemById = async (listItemId) => {
   }
 }
 
+async function updateListItem(listItem){
 const updateListItem = async (listItem) => {
   const res = await fetch(`${BASE_URL}/${listItem._id}`, {
     method: 'PUT',
@@ -48,8 +49,8 @@ const updateListItem = async (listItem) => {
     body: JSON.stringify(listItem)
   })
   const data = await res.json()
-  console.log(data)
   return data
+  }
 }
 
 const deleteListItem = async (listItemId) => {

@@ -22,8 +22,9 @@ body{
 
 #comment-card{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
+  width: 300px;
 }
 
 .comment-section{

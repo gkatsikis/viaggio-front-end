@@ -1,3 +1,4 @@
+import styles from './BucketList.css'
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListItemForm from '../../components/ListItemForm/ListItemForm';
@@ -22,16 +23,16 @@ useEffect(() => {
 }, [])
 
   return (  
-    <>
-      <h1>Bucket List</h1>
+    <div className='full-container'>
+      <h4>Bucket List</h4>
       <ListItemForm handleCreateItem={handleCreateItem} />
-      <h3>Your Bucket List Items Here:</h3>
+      <h5>Your Bucket List Items Here:</h5>
       <div>
         {listItems.map (listItem =>
           <ListItem key={listItem._id} listItem={listItem}/>
           )}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,8 +1,10 @@
-@media screen and (max-width: 540px){
+@media screen and (max-width: 540px) {
   .full-container{
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
   }
-
+  
   #btn {
     background-color: teal;
     width: 100%;
