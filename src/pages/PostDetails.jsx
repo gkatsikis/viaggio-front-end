@@ -12,7 +12,6 @@ import CommentSection from '../components/Comment/CommentSection'
 const PostDetails = (props) => {
   const [post, setPost] = useState()
   const [comments, setComments] = useState([])
-  // const [comments, setComments] = useState([])
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -34,7 +33,6 @@ const PostDetails = (props) => {
     if(post) {
     const fetchPost = async () => {
       try {
-        
         setComments(post.comments)
       } catch (error) {
         throw error
@@ -50,12 +48,13 @@ const PostDetails = (props) => {
     <div className="layout">
       
       <div className="post-details">
-      <div className='edit-delete'><div><Link
+      <div className='edit-delete'><Link
           
           to='/edit'
           state={{post}}
-        ><button className='btn btn-sm btn-warning'>edit </button></Link>
+        ><div><button className='btn btn-sm btn-warning'>edit </button>
         </div>
+        </Link>
         <div>
       <button className="btn btn-danger"
         onClick={() => props.handleDeletePost(post._id)}

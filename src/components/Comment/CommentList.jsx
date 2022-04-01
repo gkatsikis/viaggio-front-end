@@ -6,7 +6,8 @@ const CommentList = (props) => {
 
 
     props.comments?.map((comment) => (
-      <div id="comment-card" key={comment._id}><CommentCard
+   css-FE
+      <div id="comment-list"><CommentCard
         {...props}
         key={comment._id}
         comment={comment}

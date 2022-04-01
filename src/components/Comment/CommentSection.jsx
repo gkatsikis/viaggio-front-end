@@ -1,6 +1,7 @@
 import React from "react";
 import CommentList from "./CommentList";
 import CreateComment from "./CreateComment";
+import styles from './CommentBox.css'
 import * as postService from '../../services/postService'
 
 const CommentSection = (props) => {
@@ -39,7 +40,7 @@ const CommentSection = (props) => {
   }
 
   return (
-    <div >
+    <div className="all-com">
       <div><CreateComment {...props} handleCreateComment={handleCreateComment} /></div>
       <div className="comment-section">
         <CommentList {...props}
