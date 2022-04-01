@@ -30,6 +30,7 @@ const PostDetails = (props) => {
   }, [id])
 
   useEffect(() => {
+    if(post) {
     const fetchPost = async () => {
       try {
         setComments(post.comments)
@@ -38,6 +39,7 @@ const PostDetails = (props) => {
       }
     }
     fetchPost()
+  }
   }, [post])
 
 

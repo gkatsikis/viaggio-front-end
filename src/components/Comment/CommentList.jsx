@@ -6,13 +6,11 @@ const CommentList = (props) => {
 
 
     props.comments?.map((comment) => (
-      <div id="comment-list"><CommentCard
+      <div id="comment-list" key={comment._id}><CommentCard
         {...props}
         key={comment._id}
         comment={comment}
       /></div>
-
-
     ))
 
   );
