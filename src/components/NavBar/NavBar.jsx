@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
   <Link to="/addPost"><i className="fa-solid fa-plus"></i></Link>
   <Link to="" onClick={handleLogout}><i className="fa-solid fa-arrow-right-from-bracket"></i></Link>
   <Link className="nav-link" to="/createBucketList"><i className="fa-solid fa-list"></i></Link>
-  <Link to="/destio"><i class="fa-solid fa-plane"></i></Link>
+  <Link to="/destio"><i className="fa-solid fa-plane"></i></Link>
   
   </div>
       :
