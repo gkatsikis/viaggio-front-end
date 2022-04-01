@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import './DestinationForm.css'
 
 
 
@@ -34,14 +35,14 @@ const DestinationForm = (props) => {
   }, [formData])
 
   return ( 
-    <>
-      <p>hey there form goes here</p>
+    <div 
+    className="dest-form-container">
       <form 
       autoComplete='off'
       ref={formElement}
       onSubmit={handleSubmit}
       >
-        <div> Where do you want to go?
+        <div className="dest-form"> Name:
           <label 
           htmlFor="dest-input"
           className="dest-input">
@@ -55,7 +56,7 @@ const DestinationForm = (props) => {
           placeholder='e.g. Santa Monica Beach'
           />
          </div>
-         <div> Where is your destination located?
+         <div className="dest-form"> Location:
           <label 
           htmlFor="dest-input"
           className="dest-input">
@@ -69,14 +70,15 @@ const DestinationForm = (props) => {
           placeholder='e.g. California, USA'
           />
          </div>
-         <div> How would you categorize this destination?
+         <div className="dest-form"> Category:
           <label 
           htmlFor="dest-input"
           className="dest-input">
           </label>
           <select 
           name="category"
-          onChange={handleChange}>
+          onChange={handleChange}
+          className="dest-form">
             <option value="Beach">Beach</option>
             <option value="Park/Trail">Park or Trail</option>
             <option value="Art Venue">Art Venue</option>
@@ -86,7 +88,7 @@ const DestinationForm = (props) => {
          type="submit"
          className="btn">Add a Destination</button>
       </form>
-    </>
+    </div>
    );
 }
  
