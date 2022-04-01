@@ -105,7 +105,7 @@ const SignupForm = props => {
         />
       </div>
       <button className="cta-btn" disabled={isFormInvalid}>Sign up</button>
-      Have an account?
+      Have an account? 
       <Link to='/login'>Log in</Link>
   </form>
   </div>
