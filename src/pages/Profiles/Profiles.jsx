@@ -1,3 +1,4 @@
+import styles from './Profiles.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import * as profileService from '../../services/profileService'

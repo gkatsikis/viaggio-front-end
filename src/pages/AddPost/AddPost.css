@@ -1,9 +1,16 @@
-.full-container{
-  margin-top: 50px;
-  width: 275px;
-}
-
-#btn {
-  background-color: teal;
-  width: 50%;
+@media screen and (max-width: 540px) {
+  .full-container{
+    margin-top: 50px;
+    width: 275px;
+  }
+  
+  #btn {
+    background-color: teal;
+    width: 50%;
+  }
+  
+  textarea {
+    border-radius: 10px;
+    border-color: rgb(209, 205, 205);
+  }
 }

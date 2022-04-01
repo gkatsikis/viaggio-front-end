@@ -1,8 +1,10 @@
-.full-container{
-  margin-top: 50px;
-}
+@media screen and (max-width: 540px){
+  .full-container{
+    margin-top: 50px;
+  }
 
-#btn {
-  background-color: teal;
-  width: 100%;
+  #btn {
+    background-color: teal;
+    width: 100%;
+  }
 }
