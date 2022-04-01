@@ -104,9 +104,9 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <button className="cta-btn" disabled={isFormInvalid}>Log In</button>
-      Dont have an account?
-      <Link to='/signup'>Sign up</Link>
+      <button className="cta-btn" disabled={isFormInvalid}>Sign up</button>
+      Have an account? 
+      <Link to='/login'>Log in</Link>
   </form>
   </div>
     

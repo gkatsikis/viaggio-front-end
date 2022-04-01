@@ -54,7 +54,7 @@ const LoginForm = props => {
         />
       </div>
       <button className="cta-btn">Log In</button>
-      Dont
+      Don't have an account?
       <Link to='/signup'>Sign up</Link>
   </form>
   </div>
