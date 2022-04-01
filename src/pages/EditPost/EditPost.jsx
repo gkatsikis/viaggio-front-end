@@ -19,14 +19,13 @@ function EditPost(props) {
   }, [formData])
 
   const handleUpdatePost = updatedPostData => {
-    console.log(updatedPostData)
     update(updatedPostData)
     .then(updatedPost => {
       setPost(updatedPost)
       navigate('/')
     })
   }
-console.log(post)
+
   const handleSubmit = evt => {
 		evt.preventDefault()
     handleUpdatePost(formData)
@@ -57,7 +56,7 @@ console.log(post)
       value={formData.title}
       required
       onChange={handleChange}
-       />
+      />
     </div>
     <div> Story:
       <label 
@@ -103,7 +102,7 @@ console.log(post)
           </div>
     </form>
     </> 
-   );
+  );
 }
 
 export default EditPost

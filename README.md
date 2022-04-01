@@ -1,68 +1,70 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+<p align="center">
+<img width="100" src="public/Viaggio.png")
+</p>
 
-Use this to go build things! 🚀
+<Details>
+ <summary>Table of Contents</summary>
 
-## To Use This Template
+[Description](#Viaggio)<br>
+[Check out the app](#Check-out-the-app)
+</Details>
 
-**Replace `<name-of-your-app-here>` in the commands below with the name of your app!**
+## Viaggio ✈️
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-```
+Viaggio is a travel inspiration app designed to fuel your travel exploration dreams and make them a reality. Recognizing there were no apps dedicated specifically to the dream stage of travel, we set out to solve this problem. 
 
-Once you are in the project directory:
+##### *"You have to dream before your dreams can come true"* ~ A.P.J. Abdul Kalam
+---
+## Check out the app
 
-```bash
-rm -rf .git
-```
+Click here to explore the [Viaggio](https://viaggio-front-end.herokuapp.com/) web application. 
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+On Viaggio, users can:
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+* Create a bucket list of travel ideas 
+* Share travel stories and photos
+  
+From the profile view, a user can view all posts they've personally shared.
 
-Re-initialize a git repository:
+---
+## Views
+![Wireframe](public/Wireframe.png)
 
-```bash
-git init
-```
 
-Use the GitHub CLI to create a new project repository on GitHub:
+---
+## Technologies Used
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
-```bash
-gh repo create <name-of-your-app-here>-front-end
-```
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-Run `npm i` to fetch the template's dependencies:
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-```bash
-npm i
-```
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 
-touch a `.env` file:
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-```bash
-touch .env
-```
+![Express](	https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 
-Fill it with the following:
+![Bootsrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-```
-REACT_APP_BACKEND_SERVER_URL=http://localhost:3001
-```
+![MongoDb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors.
+![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
-Delete this README.md, then make an initial commit:
+---
+## Acknowledgements
+Viaggio was developed collaboratively by myself Georgios Katsikis, [Kevante Grimes](https://github.com/kevanteaniah), and [Zuri Lyons](https://github.com/Zee22780) . 
 
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
 
-You're done!
+---
+## Ice Box 
+
+- [ ] Allow users to view the profile pages of other users 
+- [ ] Allow users to "like" a post or comment
+- [ ] Add API data which will allow users to identify places they want to visit from within the site and add it to their bucket list
+- [ ] Allow users to update or edit bucket list
+
+
+ 

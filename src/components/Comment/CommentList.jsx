@@ -3,8 +3,7 @@ import CommentCard from "./CommentCard";
 
 const CommentList = (props) => {
   return (
-
-
+    
     props.comments?.map((comment) => (
       <div id="comment-list" key={comment._id}><CommentCard
         {...props}

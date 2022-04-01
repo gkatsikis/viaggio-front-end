@@ -42,8 +42,6 @@ const PostDetails = (props) => {
   }
   }, [post])
 
-
-
   return (
     <div className="layout">
       

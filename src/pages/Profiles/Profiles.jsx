@@ -1,3 +1,4 @@
+import styles from './Profiles.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
@@ -14,18 +15,15 @@ const Profiles = (props) => {
     .then(profile => setProfile(profile))
   }, [params.id])
 
-
   return (
-    <div>
-      <h1>Welcome to Your Viaggio Profile</h1>
+    <div className="full-container">
+      <h4>Welcome to Your Viaggio Profile</h4>
       <div>
         {profile._id ? 
-        <>
-        
+        <>    
         {profile.name}
         {profile.posts.map(post =>
-          <PostCard key={post._id} post={post}/>
-    
+          <PostCard key={post._id} post={post}/>  
         )}
         </>
         :

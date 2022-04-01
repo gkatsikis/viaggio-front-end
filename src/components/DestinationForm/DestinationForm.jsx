@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 
-
-
 const DestinationForm = (props) => {
   const [formData, setFormData] = useState({
     destName: '',

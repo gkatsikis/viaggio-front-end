@@ -3,8 +3,6 @@ import DestinationForm from '../../components/DestinationForm/DestinationForm';
 import DestinationList from '../../components/DestinationList/DestinationList';
 import * as destService from '../../services/destService'
 
-
-
 const Destination = (props) => {
 const [locations, setLocations] = useState([])
 
@@ -22,7 +20,7 @@ useEffect(() => {
       <hr />
       <DestinationList key={locations._id} />
     </>
-   );
+  );
 }
 
 export default Destination;
