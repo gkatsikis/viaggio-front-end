@@ -8,7 +8,17 @@
 }
 
 .btn{
+  height: 25px;
+  width: 75px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 12px;
   color: white;
-  height: 50px;
-  width: 100px
+  font-weight: bolder;
+  position: relative;
+  z-index: 1;
+}
+
+.layout{
+  margin-bottom: 50px;
 }

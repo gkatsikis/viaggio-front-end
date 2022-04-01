@@ -5,13 +5,11 @@ const CommentList = (props) => {
   return (
     
     props.comments?.map((comment) => (
-      <div id="comment-card"><CommentCard
+      <div id="comment-list" key={comment._id}><CommentCard
         {...props}
         key={comment._id}
         comment={comment}
       /></div>
-
-
     ))
 
   );

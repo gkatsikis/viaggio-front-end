@@ -1,20 +1,26 @@
 import * as tokenService from './tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/destinations`
 
-function create(location) {
-  return fetch(BASE_URL, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: location
-  })
-  .then(res => res.json())
+const create = async (location) => {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: location
+    })
+    const data = await res.json()
+    return data
+  } catch (error) {
+    throw error
+  }
 }
 
-function getAll() {
-  return fetch(BASE_URL)
-  .then(res => res.json())
+const getAll = async () => {
+  const res = await fetch(BASE_URL)
+  const data = await res.json()
+  return data
 }
 
 export {

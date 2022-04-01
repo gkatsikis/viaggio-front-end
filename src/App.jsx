@@ -35,7 +35,7 @@ const App = () => {
     navigate('/')
   }
 
-  const handleSignupOrLogin = () => {
+  function handleSignupOrLogin() {
     setUser(authService.getUser())
   }
 
@@ -97,7 +97,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<PostList posts={posts} />}/>
+        <Route path="/" element={<PostList posts={posts} user={user}/>}/>
         <Route path="/addPost" element={<AddPost handleAddPost={handleAddPost}/>} />
         <Route path="/destination" element={<Destination handleAddDestination={handleAddDestination} />} />
         <Route path="/post/:id" element={<PostDetails user={user} handleDeletePost={handleDeletePost} />}/>
